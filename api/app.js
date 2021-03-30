@@ -24,14 +24,21 @@ app.use((req, res, next) => {
 
 
 app.use((error, req, res, next) => {
-    if (error instanceof Mongoose.error.ValidationError) {
+    if (error instanceof mongoose.Error.ValidationError) {
         error = createError(400, error)
     }
     console.error(error);
 
 
     const data = {}
-    data.message = error.message; 
+    data.message = error.message;
+    if (error.errors) {
+        data.errors = Object.keys(error.errors)
+            .reduce((errors, key) => {
+                errors[key] = error.errors[key].message;
+                return errors;
+            } , {})
+    }
 
     res.status(error.status || 500).json(data)
 });

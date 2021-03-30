@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const userController = require('../controller/users.controller');
 
 router.get('/shelters');
-router.post('/shelters');
+router.post('/shelters', userController.create);
 router.get('/shelters/:id');
 router.put('/shelters/:id');
 router.delete('/shelters/:id');
