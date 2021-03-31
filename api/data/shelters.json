@@ -1,0 +1,152 @@
+[
+    {
+        "name": "Schneider, Rodriguez and Gaylord",
+        "email": "mhemstead0@geocities.com",
+        "password": "JT7Ky16y",
+        "city": {
+            "coordinates": [
+                50,
+                50
+            ]
+        },
+        "phone": "664549474",
+        "contact": "Martica Hemstead",
+        "cif": "A34149454",
+        "rol": "shelter"
+    },
+    {
+        "name": "Rempel, Orn and Greenfelder",
+        "email": "isacaze1@bandcamp.com",
+        "password": "MkTtk512",
+        "city": {
+            "coordinates": [
+                50,
+                5
+            ]
+        },
+        "phone": "984843424",
+        "contact": "Ikey Sacaze",
+        "cif": "W84041424",
+        "rol": "shelter"
+    },
+    {
+        "name": "Robel-Jacobi",
+        "email": "lskones2@dedecms.com",
+        "password": "Bk9B3X0nvCQ",
+        "city": {
+            "coordinates": [
+                60,
+                60
+            ]
+        },
+        "phone": "664343404",
+        "contact": "Luise Skones",
+        "cif": "R74142404",
+        "rol": "shelter"
+    },
+    {
+        "name": "Stanton, Lindgren and Senger",
+        "email": "chuonic3@unesco.org",
+        "password": "7XGtZ4JKiVzO",
+        "city": {
+            "coordinates": [
+                15,
+                15
+            ]
+        },
+        "phone": "984241484",
+        "contact": "Cinderella Huonic",
+        "cif": "K14649494",
+        "rol": "shelter"
+    },
+    {
+        "name": "Corwin-Schiller",
+        "email": "mtheriot4@quantcast.com",
+        "password": "YeZrZ8FRiIp",
+        "city": {
+            "coordinates": [
+                70,
+                70
+            ]
+        },
+        "phone": "654040404",
+        "contact": "Mariejeanne Theriot",
+        "cif": "M74945424",
+        "rol": "shelter"
+    },
+    {
+        "name": "Bednar-Grimes",
+        "email": "sciciura5@google.co.uk",
+        "password": "WGQxEtnLG",
+        "city": {
+            "coordinates": [
+                80,
+                80
+            ]
+        },
+        "phone": "674445444",
+        "contact": "Sal Ciciura",
+        "cif": "X94045424",
+        "rol": "shelter"
+    },
+    {
+        "name": "Gerlach LLC",
+        "email": "sblewis6@microsoft.com",
+        "password": "xtu9zfz12",
+        "city": {
+            "coordinates": [
+                30,
+                40
+            ]
+        },
+        "phone": "634141454",
+        "contact": "Sebastian Blewis",
+        "cif": "A44641494",
+        "rol": "shelter"
+    },
+    {
+        "name": "Cassin, Krajcik and Konopelski",
+        "email": "skorous7@stumbleupon.com",
+        "password": "SRCEDcWGB",
+        "city": {
+            "coordinates": [
+                50,
+                80
+            ]
+        },
+        "phone": "664941494",
+        "contact": "Shawna Korous",
+        "cif": "X14545444",
+        "rol": "shelter"
+    },
+    {
+        "name": "Reichert-Leannon",
+        "email": "lailward8@wiley.com",
+        "password": "bGg6Oj7o",
+        "city": {
+            "coordinates": [
+                20,
+                18
+            ]
+        },
+        "phone": "654044464",
+        "contact": "Lay Ailward",
+        "cif": "B54244484",
+        "rol": "shelter"
+    },
+    {
+        "name": "Klocko-Heathcote",
+        "email": "jskipworth9@paypal.com",
+        "password": "3I0GafHX5Ja",
+        "city": {
+            "coordinates": [
+                10,
+                90
+            ]
+        },
+        "phone": "604947434",
+        "contact": "Jehu Skipworth",
+        "cif": "Q14546414",
+        "rol": "shelter"
+    }
+]
