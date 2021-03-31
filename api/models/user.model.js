@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const EMAIL_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const PASSWORD_PATTERN = /^.{8,}$/;
+const PHONE_PATTERN = /^[679]{1}[0-9]{8}$/;
+const CIF_PATTERN = /^([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])$/;
+
 
 const userSchema = new Schema({
 
@@ -18,7 +21,7 @@ const userSchema = new Schema({
     },
     lastName: {
         type: String,
-        required: function () {
+        required: function() {
             if (this.rol === 'adopter') {
                 return true;
             } else {
@@ -41,7 +44,7 @@ const userSchema = new Schema({
         coordinates: {
             type: [Number],
             validate: {
-                validator: function ([lng, lat]) {
+                validator: function([lng, lat]) {
                     return isFinite(lng) && isFinite(lat) && Math.abs(lat) <= 90 && Math.abs(lng) <= 180;
                 },
                 message: props => `Invalid location`
@@ -60,7 +63,7 @@ const userSchema = new Schema({
     },
     contact: {
         type: String,
-        required: function () {
+        required: function() {
             if (this.rol === 'shelter') {
                 return true;
             } else {
@@ -70,14 +73,44 @@ const userSchema = new Schema({
     },
     phone: {
         type: String,
-        required: function () {
+        required: function() {
             if (this.rol === 'shelter') {
                 return true;
             } else {
                 return false;
             }
+        },
+        validate: {
+            validator: function validate(value){
+                const str = value.toString().replace(/\s/g, '');
+                return str.length === 9 && PHONE_PATTERN.test(str);
+            }
         }
 
+    },
+    cif: {
+        type: String,
+        required: function() {
+            if (this.rol === 'shelter') {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        match: [CIF_PATTERN, 'A valid CIF/NIF/NIE is required']
+    }
+}, {
+    timestamps: true,
+    toJSON: {
+        transform: function(doc, ret) {
+            delete ret.__v;
+
+            ret.id = ret._id;
+            delete ret._id;
+
+            ret.city = ret.city.coordinates;
+            return ret;
+        }
     }
 });
 
