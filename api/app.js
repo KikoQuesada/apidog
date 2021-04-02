@@ -6,12 +6,14 @@ const logger = require('morgan');
 const express = require('express');
 
 require('./config/db.config');
+const cors = require('./config/cors.config');
 
 
 const app = express();
 
 app.use(express.json());
 app.use(logger('dev'));
+app.use(cors);
 
 /* Configure routes */
 const router = require('./config/routes.config');

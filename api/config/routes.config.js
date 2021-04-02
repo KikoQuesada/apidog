@@ -4,15 +4,15 @@ const userController = require('../controller/users.controller');
 
 router.get('/shelters', userController.listShelters);
 router.post('/shelters', userController.create);
-router.get('/shelters/:id');
-router.put('/shelters/:id');
+router.get('/shelters/:id', userController.detail);
+router.put('/shelters/:id', userController.update);
 router.delete('/shelters/:id', userController.delete);
 
-
-router.post('/users', userController.create);
-router.get('/users/:id');
-router.put('/users/:id');
-router.delete('/users/:id',userController.delete);
+router.get('/adopters', userController.listAdopters)
+router.post('/adopters', userController.create);
+router.get('/adopters/:id', userController.detail);
+router.put('/adopters/:id', userController.update);
+router.delete('/adopters/:id',userController.delete);
 
 router.get('/pets');
 router.post('/pets');
