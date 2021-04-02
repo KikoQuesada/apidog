@@ -3,8 +3,9 @@ const User = require('../models/user.model');
 const sheltersData = require('../data/shelters.json');
 const adoptersData = require('../data/adopters.json');
 
-
+require('dotenv').config();
 require('../config/db.config');
+
 
 
 
