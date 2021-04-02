@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controller/users.controller');
+const petController = require('../controller/pets.controller');
 
 router.get('/shelters', userController.listShelters);
 router.post('/shelters', userController.create);
@@ -15,10 +16,10 @@ router.put('/adopters/:id', userController.update);
 router.delete('/adopters/:id',userController.delete);
 
 router.get('/pets');
-router.post('/pets');
+router.post('/pets', petController.create);
 router.get('/pets/:id');
 router.put('/pets/:id');
-router.delete('/pets/:id');
+router.delete('/pets/:id', petController.delete);
 
 
 

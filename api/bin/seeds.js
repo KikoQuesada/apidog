@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const User = require('../models/user.model');
+const Pet = require('../models/pet.model');
 const sheltersData = require('../data/shelters.json');
 const adoptersData = require('../data/adopters.json');
+const petsData = require('../data/pet.json');
 
 require('dotenv').config();
 require('../config/db.config');
@@ -17,6 +19,8 @@ mongoose.connection.once('open', () => {
         .then(shelters => console.info(`- Added ${shelters.length} Shelters`))
         .then(() => User.create(adoptersData))
         .then(adopters => console.info(`- Added ${adopters.length} Adopters`))
+        .then(() => Pet.create(petsData))
+        .then(pets => console.info(`- Added ${pets.length} Pets`))
         .then(() => console.info(`- All data created!`))
         .catch(error => console.error(error))
         .then(() => process.exit(0))
