@@ -56,6 +56,12 @@ const petSchema = new Schema({
         ref: User.modelName,
         type: mongoose.Types.ObjectId,
         required: 'A shelter owner is required'
+    },
+    status: {
+        type: String,
+        enum: ['adopted', 'available'],
+        required: 'Need to say if the pet is available',
+        default: 'available'
     }
 }, {
     timestamps: true,

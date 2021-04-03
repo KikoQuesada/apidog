@@ -15,3 +15,23 @@ module.exports.delete = (req, res, next) => {
         })
         .catch(next)
 }
+
+module.exports.list = (req, res, next) => {
+    Pet.find()
+        .then(pets => res.status(200).json(pets))
+        .catch(next)
+}
+
+module.exports.update = (req, res, next) => {
+    const { id } = req.params;
+
+    Pet.findByIdAndUpdate(id, req.body, { new: true})
+        .then(pet => res.status(202).json(pet))
+        .catch(next)
+}
+
+module.exports.detail = (req, res, next) => {
+    Pet.findById(req.params.id)
+        .then(pet => res.status(200).json(pet))
+        .catch(next)
+}
