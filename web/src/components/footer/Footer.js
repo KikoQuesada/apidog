@@ -8,10 +8,10 @@ function Footer() {
             <div className="footer-left">
                 <h3>Get a<span> Pet</span></h3>
                 <p className="footer-links">
-					<Link to="/about" className="link-1">About Us</Link>
-					<Link to="/pets">Pets</Link>
-					<Link to="/shelters">Shelters</Link>
-					<Link to="/contact">Contact</Link>
+					<Link to="/about" className="link-1 me-2">About Us</Link>
+					<Link className="me-2" to="/pets">Pets</Link>
+					<Link className="me-2" to="/shelters">Shelters</Link>
+					<Link className="me-2" to="/contact">Contact</Link>
 				</p>
 				<p className="footer-company-name">Get a Pet © 2021</p>
 			</div>

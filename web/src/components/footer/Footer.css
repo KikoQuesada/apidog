@@ -29,12 +29,13 @@
 
 .footer-distributed h3{
 	color:  #ffffff;
-	font: normal 36px 'Open Sans', cursive;
+	font-family: 'Fredoka One', cursive;
 	margin: 0;
 }
 
 .footer-distributed h3 span{
 	color:  #4369AF;
+	font-family: 'Fredoka One', cursive;
 }
 
 /* Footer links */
@@ -100,8 +101,12 @@
 }
 
 .footer-distributed .footer-center p a{
-	color:  #4369AF;
+	color:  #ffffff;
 	text-decoration: none;;
+}
+
+.footer-distributed .footer-center p a:hover {
+	color: #4369AF;
 }
 
 .footer-distributed .footer-links a:before {
@@ -112,6 +117,10 @@
   color: #fff;
   display: inline-block;
   padding-right: 5px;
+}
+
+.footer-distributed .footer-links a:hover {
+	color: #4369AF;
 }
 
 .footer-distributed .footer-links .link-1:before {

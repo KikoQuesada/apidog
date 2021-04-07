@@ -1,0 +1,12 @@
+
+.nav-link-font {
+    font-weight: 900;
+    font: bold;
+    text-decoration: none;
+    color: black; 
+}
+
+.nav-link-font:active,
+.nav-link-font:hover {
+    color: #4369AF;
+}
