@@ -22,6 +22,7 @@ module.exports.create = (req, res, next) => {
 
 module.exports.listShelters = (req, res, next) => {
     User.find({ rol: 'shelter' })
+        .populate('pets')
         .then(shelters => res.status(200).json(shelters))
         .catch(error => next(error))
 }

@@ -53,8 +53,8 @@ const petSchema = new Schema({
         maxLength: [300, 'Name needs at most 300 chars']
     },
     shelter: {
-        ref: User.modelName,
-        type: mongoose.Types.ObjectId,
+        ref: 'User',
+        type: Schema.Types.ObjectId,
         required: 'A shelter owner is required'
     },
     status: {

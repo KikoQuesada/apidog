@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
 import Footer from './components/footer/Footer';
 import "./App.css"

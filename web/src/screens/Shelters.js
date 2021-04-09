@@ -1,10 +1,10 @@
-import SheltersList from '../components/shelters/SheltersList'
+import SheltersList from '../components/shelters/shelter-list/SheltersList'
 
 
 function Shelters() {
     return(
         <div>
-            <h1>Shelters List</h1>
+            <h2 className="mb-5">Shelters List</h2>
             <SheltersList />
         </div>
         

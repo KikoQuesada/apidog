@@ -4,6 +4,7 @@ const EMAIL_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"
 const PASSWORD_PATTERN = /^.{8,}$/;
 const PHONE_PATTERN = /^[679]{1}[0-9]{8}$/;
 const CIF_PATTERN = /^([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])$/;
+const Pet = require('../models/pet.model');
 
 
 const userSchema = new Schema({
@@ -54,7 +55,10 @@ const userSchema = new Schema({
     avatar: {
         type: String,
         required: true,
-        default: '../public/images/default avatar.png',
+        default: 'https://res.cloudinary.com/getapet/image/upload/v1617970328/default_avatar_xnnmwl.png',
+    },
+    image: {
+        type: [String]
     },
     password: {
         type: String,
@@ -113,6 +117,7 @@ const userSchema = new Schema({
         }
     }
 });
+
 
 const User = mongoose.model('Shelter', userSchema);
 module.exports = User;

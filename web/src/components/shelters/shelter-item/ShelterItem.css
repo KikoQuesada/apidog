@@ -1,0 +1,61 @@
+.shelter-card {
+    width: 100%;
+    min-height: 260px;
+    margin-bottom: 5rem;
+    box-shadow: 0px 8px 60px -10px rgba(13,28,39,0.6);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 75%, rgba(67,105,175,1) 75%);
+    border-radius: 12px;
+    max-width: 600px;
+    position: relative;
+}
+
+.shelter-img {
+    padding: 0.5rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    transform: translateY(20%);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.shelter-name-card {
+    font-family: 'Fredoka One', cursive;
+}
+
+.shelter-info-button {
+    display: inline-block;
+    font-size: 1em;
+    padding: 1em 2em;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #4369af;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    
+}
+
+.shelter-info-button:hover {
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 15px 20px rgba(67,105,175,1);
+    transform: translateY(-15%);
+    
+}
+
+.shelter-info-button-link {
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    text-decoration: none;
+}
+.shelter-info-button-link:hover {
+    color: white;
+}
+
+.shelter-icons {
+    width: 8rem;
+}
