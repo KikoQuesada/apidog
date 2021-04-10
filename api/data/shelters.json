@@ -1,8 +1,9 @@
 [
     {
-        "name": "Schneider, Rodriguez and Gaylord",
+        "name": "Defensa Felina",
         "email": "mhemstead0@geocities.com",
         "password": "JT7Ky16y",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum in felis a venenatis. Vivamus sodales elit consectetur turpis porta accumsan non vitae tellus. Etiam semper, erat sed commodo maximus, est leo faucibus lectus, eu tempor nibh nisl non tortor.",
         "city": {
             "coordinates": [
                 50,
@@ -10,14 +11,16 @@
             ]
         },
         "phone": "664549474",
+        "avatar": "https://res.cloudinary.com/getapet/image/upload/v1618040873/shelter_img/logo_1_su3vfc.jpg",
         "contact": "Martica Hemstead",
         "cif": "A34149454",
         "rol": "shelter"
     },
     {
-        "name": "Rempel, Orn and Greenfelder",
+        "name": "Arca",
         "email": "isacaze1@bandcamp.com",
         "password": "MkTtk512",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum in felis a venenatis. Vivamus sodales elit consectetur turpis porta accumsan non vitae tellus. Etiam semper, erat sed commodo maximus, est leo faucibus lectus, eu tempor nibh nisl non tortor.",
         "city": {
             "coordinates": [
                 50,
@@ -25,14 +28,16 @@
             ]
         },
         "phone": "984843424",
+        "avatar": "https://res.cloudinary.com/getapet/image/upload/v1618040873/shelter_img/logo-web1_thgjga.png",
         "contact": "Ikey Sacaze",
         "cif": "W84041424",
         "rol": "shelter"
     },
     {
-        "name": "Robel-Jacobi",
+        "name": "Asanda",
         "email": "lskones2@dedecms.com",
         "password": "Bk9B3X0nvCQ",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum in felis a venenatis. Vivamus sodales elit consectetur turpis porta accumsan non vitae tellus. Etiam semper, erat sed commodo maximus, est leo faucibus lectus, eu tempor nibh nisl non tortor.",
         "city": {
             "coordinates": [
                 60,
@@ -40,14 +45,16 @@
             ]
         },
         "phone": "664343404",
+        "avatar": "https://res.cloudinary.com/getapet/image/upload/v1618040873/shelter_img/logo_zppe58.jpg",
         "contact": "Luise Skones",
         "cif": "R74142404",
         "rol": "shelter"
     },
     {
-        "name": "Stanton, Lindgren and Senger",
+        "name": "Asociación Protectora Argos",
         "email": "chuonic3@unesco.org",
         "password": "7XGtZ4JKiVzO",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum in felis a venenatis. Vivamus sodales elit consectetur turpis porta accumsan non vitae tellus. Etiam semper, erat sed commodo maximus, est leo faucibus lectus, eu tempor nibh nisl non tortor.",
         "city": {
             "coordinates": [
                 15,
@@ -55,14 +62,16 @@
             ]
         },
         "phone": "984241484",
+        "avatar": "https://res.cloudinary.com/getapet/image/upload/v1618040873/shelter_img/logo_1_pyxss8.png",
         "contact": "Cinderella Huonic",
         "cif": "K14649494",
         "rol": "shelter"
     },
     {
-        "name": "Corwin-Schiller",
+        "name": "De Vida",
         "email": "mtheriot4@quantcast.com",
         "password": "YeZrZ8FRiIp",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum in felis a venenatis. Vivamus sodales elit consectetur turpis porta accumsan non vitae tellus. Etiam semper, erat sed commodo maximus, est leo faucibus lectus, eu tempor nibh nisl non tortor.",
         "city": {
             "coordinates": [
                 70,
@@ -70,14 +79,16 @@
             ]
         },
         "phone": "654040404",
+        "avatar": "https://res.cloudinary.com/getapet/image/upload/v1618040873/shelter_img/logo_a6ekox.png",
         "contact": "Mariejeanne Theriot",
         "cif": "M74945424",
         "rol": "shelter"
     },
     {
-        "name": "Bednar-Grimes",
+        "name": "Lasa",
         "email": "sciciura5@google.co.uk",
         "password": "WGQxEtnLG",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum in felis a venenatis. Vivamus sodales elit consectetur turpis porta accumsan non vitae tellus. Etiam semper, erat sed commodo maximus, est leo faucibus lectus, eu tempor nibh nisl non tortor.",
         "city": {
             "coordinates": [
                 80,
@@ -85,14 +96,16 @@
             ]
         },
         "phone": "674445444",
+        "avatar": "https://res.cloudinary.com/getapet/image/upload/v1618040873/shelter_img/nuevo_logo_mt6y2q.webp",
         "contact": "Sal Ciciura",
         "cif": "X94045424",
         "rol": "shelter"
     },
     {
-        "name": "Gerlach LLC",
+        "name": "Ayandena",
         "email": "sblewis6@microsoft.com",
         "password": "xtu9zfz12",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum in felis a venenatis. Vivamus sodales elit consectetur turpis porta accumsan non vitae tellus. Etiam semper, erat sed commodo maximus, est leo faucibus lectus, eu tempor nibh nisl non tortor.",
         "city": {
             "coordinates": [
                 30,
@@ -100,14 +113,16 @@
             ]
         },
         "phone": "634141454",
+        "avatar": "https://res.cloudinary.com/getapet/image/upload/v1618040873/shelter_img/LOGO-WEB-PORTADA_mcnvij.png",
         "contact": "Sebastian Blewis",
         "cif": "A44641494",
         "rol": "shelter"
     },
     {
-        "name": "Cassin, Krajcik and Konopelski",
+        "name": "Fundación Benjamin Mehnert",
         "email": "skorous7@stumbleupon.com",
         "password": "SRCEDcWGB",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum in felis a venenatis. Vivamus sodales elit consectetur turpis porta accumsan non vitae tellus. Etiam semper, erat sed commodo maximus, est leo faucibus lectus, eu tempor nibh nisl non tortor.",
         "city": {
             "coordinates": [
                 50,
@@ -115,14 +130,16 @@
             ]
         },
         "phone": "664941494",
+        "avatar": "https://res.cloudinary.com/getapet/image/upload/v1618040873/shelter_img/LogoFundacionBM_g9iryn.png",
         "contact": "Shawna Korous",
         "cif": "X14545444",
         "rol": "shelter"
     },
     {
-        "name": "Reichert-Leannon",
+        "name": "A.P.A.R.T.",
         "email": "lailward8@wiley.com",
         "password": "bGg6Oj7o",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum in felis a venenatis. Vivamus sodales elit consectetur turpis porta accumsan non vitae tellus. Etiam semper, erat sed commodo maximus, est leo faucibus lectus, eu tempor nibh nisl non tortor.",
         "city": {
             "coordinates": [
                 20,
@@ -130,14 +147,16 @@
             ]
         },
         "phone": "654044464",
+        "avatar": "https://res.cloudinary.com/getapet/image/upload/v1618040873/shelter_img/IMG-20200130-WA0030-29_w6eosy.jpg",
         "contact": "Lay Ailward",
         "cif": "B54244484",
         "rol": "shelter"
     },
     {
-        "name": "Klocko-Heathcote",
+        "name": "Aprenda",
         "email": "jskipworth9@paypal.com",
         "password": "3I0GafHX5Ja",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum in felis a venenatis. Vivamus sodales elit consectetur turpis porta accumsan non vitae tellus. Etiam semper, erat sed commodo maximus, est leo faucibus lectus, eu tempor nibh nisl non tortor.",
         "city": {
             "coordinates": [
                 10,
@@ -145,6 +164,7 @@
             ]
         },
         "phone": "604947434",
+        "avatar": "https://res.cloudinary.com/getapet/image/upload/v1618040873/shelter_img/9862071_ilfbzl.jpg",
         "contact": "Jehu Skipworth",
         "cif": "Q14546414",
         "rol": "shelter"

@@ -22,6 +22,8 @@ const userSchema = new Schema({
     },
     lastName: {
         type: String,
+        minLength: [3, 'Name needs at least 3 chars'],
+        maxLength: [50, 'Name needs at most 50 chars'],
         required: function() {
             if (this.rol === 'adopter') {
                 return true;
@@ -102,6 +104,18 @@ const userSchema = new Schema({
             }
         },
         match: [CIF_PATTERN, 'A valid CIF/NIF/NIE is required']
+    },
+    description: {
+        type: String,
+        minLength: [100, 'Name needs at least 100 chars'],
+        maxLength: [300, 'Name needs at most 300 chars'],
+        required: function() {
+            if (this.rol === 'shelter') {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 }, {
     timestamps: true,
