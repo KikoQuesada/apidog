@@ -1,6 +1,7 @@
 .shelter-card {
     width: 100%;
     min-height: 260px;
+    max-height: 400px;
     margin-bottom: 5rem;
     box-shadow: 0px 8px 60px -10px rgba(13,28,39,0.6);
     background: linear-gradient(0deg, rgba(255,255,255,1) 75%, rgba(67,105,175,1) 75%);
@@ -13,21 +14,25 @@
     padding: 0.5rem;
     background-color: white;
     margin-bottom: 2rem;
-    transform: translateY(20%);
+    transform: translateY(50%);
     border-radius: 50%;
-    overflow: hidden;
     position: relative;
+    object-fit: contain;
 }
 
 .shelter-name-card {
+    margin-top: 1rem;
     font-family: 'Fredoka One', cursive;
+    display: flex;
+    justify-content: center;
 }
 
 .shelter-info-button {
     display: inline-block;
     font-size: 1em;
     padding: 1em 2em;
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-top: 50px;
     margin-bottom: 60px;
     -webkit-appearance: none;
     appearance: none;
@@ -58,4 +63,8 @@
 
 .shelter-icons {
     width: 8rem;
+}
+
+.shelter-card-content {
+    min-width: 20rem;
 }

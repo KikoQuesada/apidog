@@ -133,5 +133,12 @@ const userSchema = new Schema({
 });
 
 
-const User = mongoose.model('Shelter', userSchema);
+userSchema.virtual('pets', {
+    ref: Pet.modelName,
+    localField: '_id',
+    foreignField: 'User'
+});
+
+
+const User = mongoose.model('User', userSchema);
 module.exports = User;

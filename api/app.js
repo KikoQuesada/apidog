@@ -11,6 +11,8 @@ const cors = require('./config/cors.config');
 
 const app = express();
 
+app.use(express.static(`${__dirname}/react-app`))
+
 app.use(express.json());
 app.use(logger('dev'));
 app.use(cors);
@@ -23,6 +25,7 @@ app.use('/api/v1', router);
 app.use((req, res, next) => {
     next(createError(404, 'Route not found!'))
 });
+
 
 
 app.use((error, req, res, next) => {
