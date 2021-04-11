@@ -7,7 +7,6 @@ function Shelters() {
             <h2 className="mb-5">Shelters List</h2>
             <SheltersList />
         </div>
-        
     );
 }
 

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './ShelterItem.css';
 
 
-function ShelterItem({ shelter: {id, name, city, avatar, contact, phone, email}}) {
+function ShelterItem({ shelter: {id, name, city, avatar}}) {
     return(
         <div className="shelter-card d-flex flex-column align-items-center">
             <img height="100px" width="100px" className="shelter-img" src={avatar} alt="default" />
@@ -14,7 +14,6 @@ function ShelterItem({ shelter: {id, name, city, avatar, contact, phone, email}}
                 </div>
             </div>
             <button className="shelter-info-button"><Link className="shelter-info-button-link" to={`/shelters/${id}`}>Shelter Info</Link></button>
-            
         </div>
     );
 }

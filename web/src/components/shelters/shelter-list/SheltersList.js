@@ -32,6 +32,7 @@ function SheltersList() {
 
     if(data.loading === true) {
         return <img className="shelter-bounce-icon" src="https://res.cloudinary.com/getapet/image/upload/v1617961423/loading_shelters_as4to9.png" alt="shelter"/>
+                
     }
 
     return (

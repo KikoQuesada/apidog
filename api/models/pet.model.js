@@ -59,9 +59,8 @@ const petSchema = new Schema({
     },
     status: {
         type: String,
-        enum: ['adopted', 'available'],
+        enum: ['Adopted', "Looking for home"],
         required: 'Need to say if the pet is available',
-        default: 'available'
     }
 }, {
     timestamps: true,
