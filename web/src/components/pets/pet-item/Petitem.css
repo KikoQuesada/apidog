@@ -122,9 +122,26 @@ label.radio input:checked+span {
 }
 
 .pet-img {
-    float: none;
     width:  26rem;
     height: 20rem;
     background-size: cover;
+}
+
+@media (max-width: 760px) {
+    .pet-img {
+        width: 32rem;
+    }
+}
+
+@media (max-width: 536px) {
+    .pet-img {
+        width: 22rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .pet-img {
+        width: 19rem;
+    }
 }
 

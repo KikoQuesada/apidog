@@ -31,7 +31,7 @@ function PetsList() {
 
 
     return(
-        <div>
+        <div className="row">
             {pets.map(pet => (
                 <div className="card col-md-6 col-lg-4 col-sm-12" key={pet.id}><PetItem pet={pet}/></div>
             ))}

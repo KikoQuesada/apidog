@@ -12,7 +12,7 @@ function PetItem( { pet:{ id, name, image, age, gender, status, shelter } }) {
                 </div>
                 <div className="product-detail-container">
                     <div className="d-flex justify-content-between align-items-center">
-                        <h6 className="mb-0">{name}</h6> <span className="font-weight-bold pet-info">{`${age} years`}</span>
+                        <h6 className="mb-0">{name}</h6> <span className="font-weight-bold pet-info">{`${age}`} {age > 1 ? 'Years' : 'Year'}</span>
                     </div>
                     <div className="d-flex justify-content-between align-items-center mt-2">
                         <div className="pet-info"> <i className={gender === 'male' ? 'fa fa-mars' : 'fa fa-venus'}></i> <span>{gender}</span> </div>
