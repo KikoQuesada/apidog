@@ -25,7 +25,7 @@ function PetsList() {
 
     const { pets } = data;
 
-    if(data.loading === true) {
+    if(data.loading) {
         return <img className="pet-bounce-icon" src="https://res.cloudinary.com/getapet/image/upload/v1617958203/dog_paw_auipy7.jpg" alt="shelter"/>
     }
 
@@ -34,7 +34,7 @@ function PetsList() {
         <div className="row">
             {pets.map(pet => (
                 <div className="card col-md-6 col-lg-4 col-sm-12" key={pet.id}><PetItem pet={pet}/></div>
-            ))}
+            )).sort(pets.createdAt)}
             
         </div>
     );

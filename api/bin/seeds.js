@@ -16,11 +16,17 @@ mongoose.connection.once('open', () => {
     mongoose.connection.db.dropDatabase()
         .then(() => console.log('- Database dropped'))
         .then(() => User.create(sheltersData))
-        .then(shelters => console.info(`- Added ${shelters.length} Shelters`))
+        .then(shelters => {
+            console.info(`- Added ${shelters.length} Shelters`)
+            const sheltersWithOwnerId = petsData.map(pet => {
+                pet.shelter = shelters.find(shelter => shelter.email === pet.shelter).id;
+                return pet
+            })
+            return Pet.create(sheltersWithOwnerId)
+        })
+        .then(pets => console.info(`- Added ${pets.length} Pets`))
         .then(() => User.create(adoptersData))
         .then(adopters => console.info(`- Added ${adopters.length} Adopters`))
-        .then(() => Pet.create(petsData))
-        .then(pets => console.info(`- Added ${pets.length} Pets`))
         .then(() => console.info(`- All data created!`))
         .catch(error => console.error(error))
         .then(() => process.exit(0))

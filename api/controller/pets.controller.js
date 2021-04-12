@@ -32,6 +32,13 @@ module.exports.update = (req, res, next) => {
 
 module.exports.detail = (req, res, next) => {
     Pet.findById(req.params.id)
-        .then(pet => res.status(200).json(pet))
+        .populate('shelter', '_id name email city')
+        .then(pet => {
+            if (!pet) {
+                next(createError(404, 'Pet not found'))
+            } else {
+                res.json(pet)
+            }
+        })
         .catch(next)
 }
