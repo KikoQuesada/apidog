@@ -5,13 +5,15 @@ import "./App.css"
 import Shelters from './screens/Shelters';
 import Pets from './screens/Pets';
 import PetDetail from './components/pets/pet-detail/PetDetail'
+import ScrollToTop from './components/shared/ScrollToTop';
 
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
-      <div className="container pt-4 pb-5">
+      <div className="pt-4 pb-5 min-vh-100">
         <Switch>
           <Route exact path="/about" />
           <Route exact path="/shelters" component={Shelters}/>

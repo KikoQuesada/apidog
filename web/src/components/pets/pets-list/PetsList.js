@@ -31,12 +31,15 @@ function PetsList() {
 
 
     return(
-        <div className="row">
-            {pets.map(pet => (
-                <div className="card col-md-6 col-lg-4 col-sm-12" key={pet.id}><PetItem pet={pet}/></div>
-            )).sort(pets.createdAt)}
+        <div className="container">
+            <div className="row">
+                {pets.map(pet => (
+                    <div className="card col-md-6 col-lg-3 col-sm-12" key={pet.id}><PetItem pet={pet}/></div>
+                )).sort(pets.createdAt)}
             
+            </div>
         </div>
+        
     );
 }
 

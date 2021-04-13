@@ -30,17 +30,20 @@ function SheltersList() {
     
     const { shelters} = data;
 
-    if(data.loading === true) {
+    if(data.loading) {
         return <img className="shelter-bounce-icon" src="https://res.cloudinary.com/getapet/image/upload/v1617961423/loading_shelters_as4to9.png" alt="shelter"/>
                 
     }
 
     return (
-        <div className="row row-cols-2">
-            {shelters.map(shelter => (
-                <div key={shelter.id}><ShelterItem shelter={shelter}/></div>
-            ))}
+        <div className="container">
+            <div className="row row-cols-2">
+                {shelters.map(shelter => (
+                    <div key={shelter.id}><ShelterItem shelter={shelter}/></div>
+                ))}
+            </div>
         </div>
+        
     );
 }
 

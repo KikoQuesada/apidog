@@ -3,7 +3,8 @@
 .card {
     border: none;
     border-radius: 10px;
-    height: 30rem;
+    margin-bottom: 2rem;
+    align-items: center;
 }
 
 .home-status {
@@ -52,12 +53,11 @@
 
 .img-container .first {
     position: absolute;
-    width: 100%
 }
 
 .img-container img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px
+    border-radius: 10px;
+    max-width: min-content;
 }
 
 .product-detail-container {
@@ -147,8 +147,8 @@ label.radio input {
   }
 
 .pet-img {
-    width:  26rem;
-    height: 20rem;
+    width:  20rem;
+    height: 14rem;
     background-size: cover;
 }
 
