@@ -25,6 +25,9 @@ const petSchema = new Schema({
             message: props => `Invalid image URL`
           }
     },
+    gallery: {
+        type: [String],
+    },
     specie: {
         type: String, 
         enum: ['dog', 'cat'],

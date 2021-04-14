@@ -30,7 +30,7 @@ function PetDetail() {
         return null
     }
 
-    const { name, race, age, image, gender, personality, shelter, status } = pet;
+    const { name, race, age, image, gender, personality, shelter, status, gallery } = pet;
     return ( 
         <div className="container w-75">
             <div className="profile-header">
@@ -49,7 +49,7 @@ function PetDetail() {
             </div>
 
             <div className="main-bd">
-                <div className="">
+                <div>
                     <div className="profile-side">
                         <div className="d-flex justify-content-end">
                             <h5 className={status === 'Looking for home' ? 'profile-side-home' : 'profile-side-adopted'}>{status}</h5>
@@ -64,13 +64,21 @@ function PetDetail() {
                             <p>{personality}</p>
                         </div>
                         <div className="profile-btn">
-                            <button className="adoptRequest" id="chatBtn"><i className="fas fa-paper-plane"></i> Send Adoption Request</button>
-                            <button className="adoptRequest" id="Create-post"><i className="fas fa-undo"></i> Back to Pets</button>
+                            <button className="adoptRequest"><i className="fas fa-paper-plane"></i> Send Adoption Request</button>
+                            <button className="adoptRequest"><i className="fas fa-undo"></i> <Link to='/pets'> Back to Pets</Link></button>
                         </div>
                     </div>
+                    {gallery.length !== 0 ? (
+                    <div className="mt-5">
+                        <h3>Here you can see more about<h3 className="pet-name-galley">{name}</h3></h3>
+                        <div className="pet-detail-gallery">
+                            {gallery.map(img => <img key={img} src={img} alt={name}/>)}
+                        </div>
+                    </div>
+                    ) : ''}
+                    
                 </div>
             </div>
-
         </div>
     )
 }

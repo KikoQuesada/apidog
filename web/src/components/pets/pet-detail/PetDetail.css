@@ -1,3 +1,4 @@
+
 .profile-header {
     background: #4369AF;
     width: 100%;
@@ -64,7 +65,7 @@
     padding: 3em 2em 1em;
     margin-left: 1em;
     z-index: 99;
-    width: 79rem;
+    width: 78rem;
 }
 
 .profile-side-home{
@@ -85,6 +86,11 @@
   background-color: rgb(196, 45, 45);
   color: white;
   font-weight: 700;
+}
+
+.pet-name-galley {
+  color: #4369AF;
+  font-family: 'Fredoka one';
 }
 
 .profile-side p {
@@ -138,14 +144,14 @@
 }
 
 .pet-personality p{
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
   
 .profile-btn {
     display: flex;
 }
-  
+ 
 button.adoptRequest {
     border: 0;
     padding: 10px;
@@ -170,6 +176,33 @@ button.adoptRequest:hover {
   
 button.adoptRequest i {
     margin-right: 5px;
+}
+
+button.adoptRequest a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.adoptRequest:hover {
+  background: white;
+  color: #4369AF;
+  transition: 0.3s ease-in-out;
+}
+
+.pet-detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pet-detail-gallery img {
+  flex-wrap: wrap;
+  max-height: 20rem;
+  width: 100%;
+  object-fit: contain;
+  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -236,6 +269,31 @@ button.adoptRequest i {
     .user-rating {
       justify-content: center;
     }
+
+    .pet-detail-info {
+      display: flex;
+      border-radius: 1em;
+      flex-direction: column;
+      
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .pet-detail-info p {
+      margin-bottom: 5px;
+      margin-left: 0px;
+      color: white;
+      font-size: 1em;
+      font-weight: 700;
+    }
+
+    .pet-detail-info i {
+      margin-bottom: 5px;
+      color: white;
+      font-size: 1em;
+      font-weight: 700;
+      margin-right: 0px;
+    }
 }
   
 @media (max-width: 400px) {
@@ -249,16 +307,16 @@ button.adoptRequest i {
         font-size: 0.7rem;
     }
 
-    .pet-info {
+    .pet-detail-info {
       display: flex;
       border-radius: 1em;
       flex-direction: column;
-      justify-content: start;
+      
       align-items: flex-start;
       margin-bottom: 10px;
     }
 
-    .pet-info p {
+    .pet-detail-info p {
       margin-bottom: 5px;
       margin-left: 0px;
       color: white;
@@ -266,7 +324,7 @@ button.adoptRequest i {
       font-weight: 700;
     }
 
-    .pet-info i {
+    .pet-detail-info i {
       margin-bottom: 5px;
       color: white;
       font-size: 1em;

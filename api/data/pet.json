@@ -82,6 +82,7 @@
         "age": "6",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618215776/pet_image/cara-border-collie_bh3lar.jpg",
         "gender": "female",
+        "gallery": ["https://res.cloudinary.com/getapet/image/upload/v1618420715/pet_image/images_hhuye5.jpg", "https://res.cloudinary.com/getapet/image/upload/v1618420715/pet_image/descarga_1_ysdi0h.jpg", "https://res.cloudinary.com/getapet/image/upload/v1618420715/pet_image/descarga_pljbtz.jpg"],
         "personality": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
         "shelter": "chuonic3@unesco.org",
         "specie": "dog",
