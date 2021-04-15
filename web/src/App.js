@@ -7,7 +7,6 @@ import Pets from './screens/Pets';
 import PetDetail from './components/pets/pet-detail/PetDetail'
 import ScrollToTop from './components/shared/ScrollToTop';
 
-
 function App() {
   return (
     <Router>

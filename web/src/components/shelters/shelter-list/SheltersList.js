@@ -37,9 +37,9 @@ function SheltersList() {
 
     return (
         <div className="container">
-            <div className="row row-cols-2">
+            <div className="row">
                 {shelters.map(shelter => (
-                    <div key={shelter.id}><ShelterItem shelter={shelter}/></div>
+                    <div className="col-lg-4 col-md-6 col-sm-12" key={shelter.id}><ShelterItem shelter={shelter}/></div>
                 ))}
             </div>
         </div>

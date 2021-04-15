@@ -27,44 +27,8 @@
     justify-content: center;
 }
 
-.shelter-info-button {
-    display: inline-block;
-    font-size: 1em;
-    padding: 1em 2em;
-    margin-top: 50px;
-    margin-top: 50px;
-    margin-bottom: 60px;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #4369af;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    
+.shelter-list-name {
+    font-weight: 700;
+    color: #4369af;
 }
 
-.shelter-info-button:hover {
-    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    box-shadow: 0 15px 20px rgba(67,105,175,1);
-    transform: translateY(-15%);
-    
-}
-
-.shelter-info-button-link {
-    color: white;
-    font-family: 'Fredoka One', cursive;
-    text-decoration: none;
-}
-.shelter-info-button-link:hover {
-    color: white;
-}
-
-.shelter-icons {
-    width: 8rem;
-}
-
-.shelter-card-content {
-    min-width: 20rem;
-}

@@ -1,21 +1,56 @@
 import { Link } from 'react-router-dom';
 import './ShelterItem.css';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
 
+function ShelterItem({ shelter: {id, name, city, avatar, pets, description}}) {
+    
 
-function ShelterItem({ shelter: {id, name, city, avatar}}) {
+    const useStyles = makeStyles({
+        root: {
+        maxWidth: 345,
+        marginBottom: 50,    
+        },
+      });
+
+      const classes = useStyles();
     return(
-        <div className="shelter-card d-flex flex-column align-items-center">
-            <img height="100px" width="100px" className="shelter-img" src={avatar} alt="default" />
-            <div className="shelter-card-content">
-                <h5 className="shelter-name-card">{name}</h5>
-                <div className="d-flex justify-content-between">
-                    <i className="fa fa-paw fa-2x" aria-hidden="true"></i>
-                    <i class="fa fa-building fa-2x" aria-hidden="true"></i><span>{city}</span>
-                </div>
-            </div>
-            <button className="shelter-info-button"><Link className="shelter-info-button-link" to={`/shelters/${id}`}>Shelter Info</Link></button>
+        <div>
+            <Card className={classes.root}>
+            
+                <CardActionArea component={Link} to={`/shelters/${id}`}>
+                    <CardMedia
+                        component="img"
+                        alt={name}
+                        height="140"
+                        image={avatar}
+                        title="Contemplative Reptile"
+                        />
+                    <CardContent>
+                        <h5 className="shelter-list-name" gutterBottom variant="h5" component="h2">{name}</h5>
+                        <p variant="body2" color="textSecondary" component="p">{description}</p>
+                        <div className="d-flex">
+                            {pets.map((pet, i) => <Avatar className="me-3" key={i} alt={pet.name} src={pet.image} />)}
+                        </div>
+                    </CardContent>
+                </CardActionArea>
+                
+                <CardContent>
+                    <span className="badge rounded-pill bg-success me-2">{city}</span>
+                    {[...new Set(pets.map(p => p.specie))].map((specie, i) => <span key={i} className="badge rounded-pill bg-danger me-2">{specie}</span>)}
+                </CardContent>
+            </Card>
         </div>
+        
+        
     );
 }
 
 export default ShelterItem;
+

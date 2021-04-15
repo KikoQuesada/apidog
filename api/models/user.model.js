@@ -137,7 +137,7 @@ const userSchema = new Schema({
 userSchema.virtual('pets', {
     ref: Pet.modelName,
     localField: '_id',
-    foreignField: 'User'
+    foreignField: 'shelter'
 });
 
 
