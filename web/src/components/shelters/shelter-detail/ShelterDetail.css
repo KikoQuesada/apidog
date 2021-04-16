@@ -1,0 +1,79 @@
+.MuiPaper-root {
+    background-color: #fafafa;
+}
+
+.shelter-detail-avatar {
+    min-width: 20rem;
+    max-width: 22rem;
+}
+
+.shelter-info-distribution {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.shelter-detail-description {
+    margin: 4rem 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.shelter-detail-name {
+    font-weight: 700;
+    color: #4369af;
+}
+
+.shelter-detail-contact {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.shelter-pet-img {
+    max-width: 10rem;
+    min-height: 10rem;
+    border-radius: 60%;
+}
+
+.btn-primary {
+    background-color: #4369af;
+    font-weight: 700;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: #4369af;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+    .shelter-info-distribution {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shelter-detail-contact {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 467px) {
+    .shelter-detail-contact {
+        flex-direction: column;
+        justify-content: start;
+    }
+}

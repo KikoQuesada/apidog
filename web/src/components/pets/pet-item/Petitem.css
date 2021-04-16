@@ -5,6 +5,7 @@
     border-radius: 10px;
     margin-bottom: 2rem;
     align-items: center;
+    background-color: #fafafa;
 }
 
 .home-status {
@@ -48,7 +49,7 @@
 }
 
 .img-container {
-    position: relative
+    position: relative;
 }
 
 .img-container .first {
@@ -61,7 +62,8 @@
 }
 
 .product-detail-container {
-    padding: 10px
+    padding: 10px;
+    background-color: #fafafa;
 }
 
 .pet-age i {
@@ -83,25 +85,6 @@ label.radio input {
     visibility: hidden;
     pointer-events: none
 }
-
-/* label.radio span {
-    height: 25px;
-    width: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #dc3545;
-    color: #dc3545;
-    font-size: 10px;
-    border-radius: 50%;
-    text-transform: uppercase
-} */
-
-/* label.radio input:checked+span {
-    border-color: #dc3545;
-    background-color: #dc3545;
-    color: #fff
-} */
 
 .product-detail-container h6 {
     font-family: 'Fredoka one' cursive;

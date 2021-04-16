@@ -62,6 +62,7 @@ module.exports.update = (req, res, next) => {
 
 module.exports.detail = (req, res, next) => {
     User.findById(req.params.id)
+    .populate('pets')
         .then(user => {
             if (user) res.status(200).json(user)
             else next(createError(404, 'User not found'))

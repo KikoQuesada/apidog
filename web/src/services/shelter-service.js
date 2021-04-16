@@ -2,8 +2,11 @@ import http from './base-api-service';
 
 const list = () => http.get('/shelters')
 
+const detail = (id) => http.get(`/shelters/${id}`);
+
 const service = {
-    list
+    list,
+    detail
 }
 
 export default service;
