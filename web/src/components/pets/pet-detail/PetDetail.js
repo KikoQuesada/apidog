@@ -64,8 +64,8 @@ function PetDetail() {
                             <p>{personality}</p>
                         </div>
                         <div className="profile-btn">
-                            <button className="adoptRequest"><i className="fas fa-paper-plane"></i> Send Adoption Request</button>
-                            <button className="adoptRequest"><i className="fas fa-undo"></i> <Link to='/pets'> Back to Pets</Link></button>
+                            <Link className="btn pet-detail-btn" to='/'><i className="fas fa-paper-plane"></i> Send Adoption Request</Link>
+                            <Link className="btn pet-detail-btn" to='/pets'><i className="fas fa-undo"></i> Back to Pets</Link>
                         </div>
                     </div>
                     {gallery.length !== 0 ? (

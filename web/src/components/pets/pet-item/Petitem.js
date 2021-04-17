@@ -2,7 +2,7 @@ import './Petitem.css';
 import { Link } from 'react-router-dom';
 
 
-function PetItem( { pet:{ id, name, image, age, gender, status, shelter } }) {
+function PetItem( { pet:{ id, name, image, age, gender, status, race} }) {
 
 
     return (

@@ -4,7 +4,7 @@ import './Navbar.css';
 
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-5">
+        <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
             <div className="container">
                 <NavLink to="/" ><img width="100" className="d-inline-block align-middle" src="https://res.cloudinary.com/getapet/image/upload/v1617819597/GetAPet_icon-02_d33hde.png" alt="getapet"/><img width="100" className="d-inline-block align-middle" src="https://res.cloudinary.com/getapet/image/upload/v1617819685/GetAPet_text-03_mdqzbr.png" alt="getapet-text" /></NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">

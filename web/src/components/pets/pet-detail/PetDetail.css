@@ -152,42 +152,23 @@
     display: flex;
 }
  
-button.adoptRequest {
-    border: 0;
-    padding: 10px;
-    width: 100%;
-    border-radius: 3px;
-    background: #4369AF;
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 5px 2px;
-    cursor: pointer;
-    outline: none;
-    margin-bottom: 10px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
-}
-  
-button.adoptRequest:hover {
-    background: white;
-    color: #4369AF;
-    transition: 0.3s ease-in-out;
-}
-  
-button.adoptRequest i {
-    margin-right: 5px;
-}
-
-button.adoptRequest a {
+.pet-detail-btn {
+  margin-right: 2rem;
+  background-color: #4369af;
   color: white;
-  font-size: 1.5rem;
-  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-.adoptRequest:hover {
-  background: white;
-  color: #4369AF;
-  transition: 0.3s ease-in-out;
+.pet-detail-btn:hover {
+  color: white;
+  transition: ease 0.5s;
+  transform: scale(.9);
+
 }
 
 .pet-detail-gallery {

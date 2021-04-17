@@ -17,7 +17,15 @@ module.exports.delete = (req, res, next) => {
 }
 
 module.exports.list = (req, res, next) => {
-    Pet.find()
+
+    const criteria = {}
+    const { race } = req.query;
+
+    if (race) {
+        criteria.race = new RegExp(race, 'i');
+    }
+
+    Pet.find(criteria)
         .then(pets => res.status(200).json(pets))
         .catch(next)
 }
