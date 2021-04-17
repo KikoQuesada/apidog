@@ -7,6 +7,7 @@ import ShelterDetail from './components/shelters/shelter-detail/ShelterDetail';
 import Pets from './screens/Pets';
 import PetDetail from './components/pets/pet-detail/PetDetail'
 import ScrollToTop from './components/shared/ScrollToTop';
+import Register from './screens/Register';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/pets" component={Pets}/>
           <Route exact path="/pets/:id" component={PetDetail}/>
           <Route exact path="/contact" />
+          <Route exact path="/register" component={Register} />
         </Switch>
       </div>
       <Footer />
