@@ -36,7 +36,7 @@ function ShelterDetail() {
         return null;
     }
     
-    const { name, pets, email, city, avatar, image, contact, phone, description } = shelter;
+    const { name, pets, email, city, avatar, contact, phone, description } = shelter;
 
     const StyledPaper = withStyles({
         root: {

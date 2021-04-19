@@ -10,3 +10,27 @@
     padding-left: 0;
     background-color: #fafafa;
   }
+
+  .shelter-avatar-container {
+      max-width: 10rem;
+      max-height: 10rem;
+      border-radius: 50%;
+  }
+
+.create-shelter-btn {
+    margin-right: 2rem;
+    background-color: #4369af;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.create-shelter-btn:hover {
+    color: white;
+    transition: ease 0.5s;
+    transform: scale(.9);
+}

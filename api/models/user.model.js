@@ -38,7 +38,7 @@ const userSchema = new Schema({
         required: 'A valid email is required',
         match: [EMAIL_PATTERN, 'The email is invalid']
     },
-    city: {
+    /* city: {
         type: {
             type: String,
             enum: ['Point'],
@@ -53,15 +53,15 @@ const userSchema = new Schema({
                 message: props => `Invalid location`
             }
         }
-    },
+    }, */
     avatar: {
         type: String,
         required: true,
         default: 'https://res.cloudinary.com/getapet/image/upload/v1617970328/default_avatar_xnnmwl.png',
     },
-    image: {
+/*     image: {
         type: [String]
-    },
+    }, */
     password: {
         type: String,
         required: 'A valid password is required',

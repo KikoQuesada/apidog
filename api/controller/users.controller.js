@@ -9,6 +9,10 @@ module.exports.create = (req, res, next) => {
         coordinates: city
     }
 
+    if (req.file) {
+        req.body.avatar = req.file.url
+    }
+
     User.create(req.body)
         .then(user => res.status(201).json(user))
         .catch(error => {
@@ -50,6 +54,10 @@ module.exports.update = (req, res, next) => {
             type: 'Point',
             coordinates: city
         }
+    }
+
+    if (req.file) {
+        req.body.avatar = req.file.url
     }
 
     User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })

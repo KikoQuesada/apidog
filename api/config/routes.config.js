@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controller/users.controller');
 const petController = require('../controller/pets.controller');
+const uploadShelters = require('./storageShelters.config');
 
 router.get('/shelters', userController.listShelters);
-router.post('/shelters', userController.create);
+router.post('/shelters', uploadShelters.single('avatar'), userController.create);
 router.get('/shelters/:id', userController.detail);
-router.put('/shelters/:id', userController.update);
+router.put('/shelters/:id', uploadShelters.single('avatar'), userController.update);
 router.delete('/shelters/:id', userController.delete);
 
 router.get('/adopters', userController.listAdopters)
