@@ -34,3 +34,24 @@
     transition: ease 0.5s;
     transform: scale(.9);
 }
+
+.google-list {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.google-btn-predictions {
+  background-color: transparent;
+  border: 0;
+  color: black;
+  font-family: 'Fredoka one';
+}
+
+.google-btn-predictions:hover {
+  background-color: #4369af;
+  border: 0;
+  color: white;
+  font-family: 'Fredoka one';
+}

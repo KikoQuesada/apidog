@@ -70,7 +70,7 @@ function PetDetail() {
                     </div>
                     {gallery.length !== 0 ? (
                     <div className="mt-5">
-                        <h3>Here you can see more about<h3 className="pet-name-galley">{name}</h3></h3>
+                        <h3>Here you can see more about<span className="pet-name-gallery"> {name}</span></h3>
                         <div className="pet-detail-gallery">
                             {gallery.map(img => <img key={img} src={img} alt={name}/>)}
                         </div>

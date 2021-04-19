@@ -3,6 +3,8 @@ import { useState } from 'react';
 import shelterService from '../../../services/shelter-service';
 import './ShelterForm.css';
 import { useHistory } from 'react-router';
+
+import usePlacesAutocomplete from '../../shared/UsePlacesAutocomplete';
 const EMAIL_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const PASSWORD_PATTERN = /^.{8,}$/;
 const PHONE_PATTERN = /^[679]{1}[0-9]{8}$/;
@@ -114,6 +116,15 @@ function ShelterForm() {
         }
     });
 
+    const [selectedPrediction, setSelectedPrediction] = useState(null)
+    const [searchValue, setSearchValue] = useState("")
+    const predictions = usePlacesAutocomplete(searchValue)
+
+    const handlePredictionSelection = (e, prediction) => {
+        e.preventDefault()
+        setSelectedPrediction(prediction)
+      }
+
     const handleChange = (event) => {
         let { name, value } = event.target;
 
@@ -218,7 +229,19 @@ function ShelterForm() {
                         <input type="password" name="password" value={shelter.password} onChange={handleChange} onBlur={handleBlur} placeholder="Enter your password" className={`form-control form-control-underlined border-primary ${touch.password && errors.password ? 'is-invalid' : ''}`}/>
                         <div className="invalid-feedback">{errors.password}</div>
                     </div>
-
+                    <div className="input-group mb-4 d-flex align-items-center">
+                        <span><i className="fas fa-map-marker-alt fa-lg me-3"></i></span>
+                        <input name="predictionSearch" value={searchValue} onChange={e => setSearchValue(e.target.value)}/>
+                        <ul className='row google-list'>
+                            {predictions?.map(prediction => (
+                                <li key={prediction?.place_id}>
+                                    <button className="google-btn-predictions" onClick={e => handlePredictionSelection(e, prediction)} onKeyDown={e => handlePredictionSelection(e, prediction)}>
+                                        {prediction?.structured_formatting?.main_text || "Not found"}
+                                    </button>
+                                </li>
+                            ))}
+                         </ul>
+                    </div>
                     <div className="input-group mb-4 d-flex align-items-center">
                         <span><i className="fas fa-edit fa-lg me-3"></i></span>
                         <textarea rows='4' type="text" name="description" value={shelter.description} onChange={handleChange} onBlur={handleBlur} placeholder="Shelter description" className={`form-control form-control-underlined border-primary ${touch.description && errors.description ? 'is-invalid' : ''}`}/>
