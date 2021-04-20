@@ -1,0 +1,29 @@
+
+
+.img-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6%;
+    margin: 5rem 5rem 2rem 5rem;
+    width: 20rem;
+    height: 20rem;
+    background-color: white;
+}
+
+.img-position:hover {
+    transition: ease 0.5s;
+    transform: scale(0.9);
+}
+
+.btn-image {
+    width: 12rem;
+    height: 12rem;
+}
+
+.title-btn {
+    text-align: center;
+    font-family: 'Fredoka one';
+    color: #4369af;
+    font-size: 1.5rem;
+}
