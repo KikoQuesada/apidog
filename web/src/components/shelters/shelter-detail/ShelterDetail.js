@@ -1,9 +1,10 @@
 import shelterService from '../../../services/shelter-service';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment, useContext } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
+import { AuthContext } from '../../../contexts/AuthStore';
 
 import './ShelterDetail.css';
 import { withStyles } from '@material-ui/core';
@@ -13,6 +14,8 @@ import PetItem from './../../pets/pet-item/Petitem';
 function ShelterDetail() {
 
     const params = useParams();
+
+    const { user } = useContext(AuthContext);
 
     const [shelter, setShelter ] = useState();
 
@@ -49,7 +52,12 @@ function ShelterDetail() {
             <div className="shelter-info-distribution">
                 <div className="d-flex flex-column justify-content-center align-items-center shelter-detail-avatar">
                     <img className='col-6' alt={name} src={avatar}/>
-                    <Link className="btn btn-primary shadow-sm col-6 mt-3" to="#" role="button">Visit Website</Link>
+                    {user?.rol === 'shelter' && (
+                        <Link className="btn btn-primary shadow-sm col-6 mt-3" to='/petsCreate' role="button">Create Pet</Link>
+                    )}
+                    
+                    <Link className="btn btn-primary shadow-sm col-6 mt-3" to="/" role="button">Visit Website</Link>
+                   
                 </div>
                 <StyledPaper elevation={0} className="col-lg-6 col-sm-12">
                     <h3 className="mb-5 shelter-detail-name">{name}</h3>
@@ -69,7 +77,7 @@ function ShelterDetail() {
                         <div className="d-flex justify-content-center m-4" key={pet.id}><PetItem pet={pet}/></div>
                     ))}
                 </div>
-            </div>  
+            </div>
         </div>
     );
 }

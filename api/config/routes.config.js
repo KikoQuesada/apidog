@@ -5,9 +5,9 @@ const petController = require('../controller/pets.controller');
 const uploadShelters = require('./multer.config');
 const secure = require('../middlewares/secure.middleware');
 
-router.get('/shelters', userController.listShelters);
+router.get('/shelters', secure.isAuthenticated, userController.listShelters);
 router.post('/shelters', uploadShelters.single('avatar'), userController.create);
-router.get('/shelters/:id', userController.detail);
+router.get('/shelters/:id', secure.isAuthenticated, userController.detail);
 router.put('/shelters/:id', uploadShelters.single('avatar'), userController.update);
 router.delete('/shelters/:id', userController.delete);
 
@@ -17,8 +17,8 @@ router.get('/adopters/:id', userController.detail);
 router.put('/adopters/:id', userController.update);
 router.delete('/adopters/:id',userController.delete);
 
-router.get('/pets', secure.isAuthenticated, petController.list);
-router.post('/pets', secure.isAuthenticated, petController.create);
+router.get('/pets', petController.list);
+router.post('/pets', secure.isAuthenticated, secure.checkRol('shelter'), petController.create);
 router.get('/pets/:id', petController.detail);
 router.put('/pets/:id', petController.update);
 router.delete('/pets/:id', petController.delete);

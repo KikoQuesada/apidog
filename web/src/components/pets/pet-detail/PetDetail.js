@@ -4,6 +4,9 @@ import petService from '../../../services/pet-service';
 import { Link } from 'react-router-dom'
 import './PetDetail.css';
 
+import Paper from '@material-ui/core/Paper';
+import Divider from '@material-ui/core/Divider';
+import { withStyles } from '@material-ui/core';
 
 function PetDetail() {
 
@@ -31,55 +34,42 @@ function PetDetail() {
     }
 
     const { name, race, age, image, gender, personality, shelter, status, gallery } = pet;
+
+    const StyledPaper = withStyles({
+        root: {
+            backgroundColor: '#fafafa',
+
+        }
+    })(Paper);
     return ( 
-        <div className="container w-75">
-            <div className="profile-header">
 
-                <div className="profile-img">
-                    <img src={image} width="200" alt={name}/>
+        <div className="container">
+            <div className="pet-info-distribution">
+                <div className="d-flex flex-column justify-content-center align-items-center pet-detail-avatar">
+                    <img className='col-6' alt={name} src={image}/>
+                    <div className={`pet-status-${status === 'Looking for home' ? 'home' : 'adopted'} shadow-sm mt-4`}>{status}</div>
                 </div>
-
-                <div className="profile-nav-info">
-                    <h3 className="user-name">{name}</h3>
-                    <div className="address">
-                        <p>{race.toUpperCase()}</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div className="main-bd">
-                <div>
-                    <div className="profile-side">
-                        <div className="d-flex justify-content-end">
-                            <h5 className={status === 'Looking for home' ? 'profile-side-home' : 'profile-side-adopted'}>{status}</h5>
-                        </div>
-                        <div className="d-flex justify-content-around align-items-center pet-detail-info">
-                            <p><i className="fas fa-birthday-cake"></i> {age} {age === 1 ? 'Year' : 'Years'}</p>
-                            <p><i className={gender === 'male' ? 'fas fa-mars' : 'fas fa-venus'}></i> {gender}</p>
-                            <p><i className="fas fa-paw"></i><Link to={`/shelters/${shelter.id}`} className="pet-shelter-link"> {shelter.name}</Link></p>
-                        </div>
+                <StyledPaper elevation={0} className="col-lg-6 col-sm-12 styledPaper">
+                    <h3 className="pet-detail-name">{name}</h3>
+                    <h4 className="mb-5">{race}</h4>
+                    <div className="pet-detail-contact col-md-12">
+                        <h6 className="me-4 fw-bold"><i className="pet-info-icon fas fa-birthday-cake me-2"></i>{age} {`${age > 1 ? 'Years' : 'Year'}`}</h6>
+                        <h6 className="me-4 fw-bold"><i className={`pet-info-icon fas fa-${gender === 'male' ? 'mars' : 'venus'} me-2`}></i>{gender}</h6>
+                        <h6 className="me-4 fw-bold"><i className={`pet-info-icon fas fa-home me-2`}></i>{shelter.name}</h6>
                         
-                        <div className="pet-personality">
-                            <p>{personality}</p>
-                        </div>
-                        <div className="profile-btn">
-                            <Link className="btn pet-detail-btn" to='/'><i className="fas fa-paper-plane"></i> Send Adoption Request</Link>
-                            <Link className="btn pet-detail-btn" to='/pets'><i className="fas fa-undo"></i> Back to Pets</Link>
-                        </div>
                     </div>
-                    {gallery.length !== 0 ? (
-                    <div className="mt-5">
-                        <h3>Here you can see more about<span className="pet-name-gallery"> {name}</span></h3>
-                        <div className="pet-detail-gallery">
-                            {gallery.map(img => <img key={img} src={img} alt={name}/>)}
-                        </div>
-                    </div>
-                    ) : ''}
-                    
+                </StyledPaper>
+            </div>
+            <Divider light={false} className="bg-secondary" variant="middle" />
+            <p className="pet-detail-description">{personality}</p>
+            <div className="row justify-content-center">
+            <h3 className="mb-4 title-gallery">{name}'s Image Gallery</h3>
+                <div className="row">
+                    {gallery.map(img =><div className="col-lg-2 col-md-12 mb-4"> <img className="img-fluid mb-4 shadow-sm" key={img} src={img} alt={name}/></div>)}
                 </div>
             </div>
         </div>
+
     )
 }
 

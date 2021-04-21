@@ -11,8 +11,7 @@ const petSchema = new Schema({
     },
     image: {
         type: String,
-        required: true,
-        default: '../public/images/default avatar.png',
+        default: 'https://res.cloudinary.com/getapet/image/upload/v1618949993/web%20sources/pet_zr6far.png',
         validate: {
             validator: function (value) {
               try {

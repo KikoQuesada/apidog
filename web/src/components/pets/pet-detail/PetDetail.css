@@ -1,316 +1,107 @@
 
-.profile-header {
-    background: #4369AF;
-    width: 100%;
-    display: flex;
-    height: 190px;
-    position: relative;
-    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2);
+.MuiPaper-root {
+  background-color: #fafafa;
 }
 
-.profile-img {
-    float: left;
-    width: 340px;
-    height: 200px;
+.pet-detail-avatar {
+  min-width: 20rem;
+  max-width: 22rem;
 }
 
-.profile-img img {
+.pet-detail-avatar img {
     border-radius: 50%;
     height: 230px;
     width: 230px;
     border: 5px solid #fff;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    left: 50px;
-    top: 20px;
-    z-index: 5;
     background: #fff;
 }
 
-.profile-nav-info {
-    float: left;
+.pet-info-distribution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.pet-detail-description {
+  margin: 4rem 4rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.pet-detail-name {
+  font-weight: 700;
+  color: #4369af;
+  font-size: 3rem;
+}
+.title-gallery {
+  font-weight: 700;
+  color: #4369af;
+}
+
+
+.pet-detail-contact {
+  display: flex;
+  align-items: center;
+  
+}
+
+.pet-detail-contact h6 {
+  font-size: 1.2em;
+  margin-right: 1rem;
+}
+
+.pet-info-icon {
+  font-size: 1.2em;
+}
+
+.pet-pet-img {
+  max-width: 10rem;
+  min-height: 10rem;
+  border-radius: 60%;
+}
+
+.btn-primary {
+  background-color: #4369af;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #4369af;
+}
+
+.pet-status-home {
+  background-color: #4ED964;
+  padding: 0.5em;
+  border-radius: 8%;
+  color: white;
+  font-family: 'Fredoka one';
+}
+
+.pet-status-adopted {
+  background-color: #FF3A31;
+  padding: 0.5em;
+  border-radius: 8%;
+  color: white;
+  font-family: 'Fredoka one';
+}
+
+@media (max-width: 1200px) {
+  .pet-info-distribution {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-top: 60px;
-}
-
-.profile-nav-info h3 {
-    font-variant: small-caps;
-    font-size: 2rem;
-    font-family: 'Fredoka one';
-    color: white;
-}
-  
-.profile-nav-info .address {
-    display: flex;
-    font-weight: bold;
-    color: white;
-}
-  
-.profile-nav-info .address p {
-    margin-right: 5px;
-}
-
-
-.main-bd {
-    width: 100%;
-    display: flex;
-    padding-right: 15px;
-}
-
-.profile-side {
-    background: #fff;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-    padding: 3em 2em 1em;
-    margin-left: 1em;
-    z-index: 99;
-    width: 78rem;
-}
-
-.profile-side-home{
-  width: fit-content;
-  border-radius: 5px;
-  padding: 0.5em;
-  margin-bottom: 5em;
-  background-color: rgb(72, 180, 29);
-  color: white;
-  font-weight: 700;
-}
-
-.profile-side-adopted{
-  width: fit-content;
-  border-radius: 5px;
-  padding: 0.5em;
-  margin-bottom: 5em;
-  background-color: rgb(196, 45, 45);
-  color: white;
-  font-weight: 700;
-}
-
-.pet-name-gallery {
-  color: #4369AF;
-  font-family: 'Fredoka one';
-  font-size: 1.7rem;
-}
-
-.profile-side p {
-  margin-bottom: 1em;
-  color: black;
-}
-  
-.profile-side p i {
-    color: white;
-    margin-right: 1rem;
-}
-
-.pet-detail-info {
-  background-color: #4369AF;
-  margin-bottom: 2em;
-  padding: 0.5em 0.5em;
-  border-radius: 5em;
-}
-
-.pet-detail-info p {
-  margin-bottom: 0px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 700;
-}
-
-.pet-shelter-link {
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-}
-
-.pet-shelter-link:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-  color: white;
-  transition: all 0.3s ease-in-out 0s;
-  transform: scaleX(0);
-}
-
-.pet-shelter-link:hover:before {
-  height: 2px;
-  transform: scaleX(1);
-  color: #4369AF;
-  
-}
-
-.pet-personality p{
-  font-size: 1.2em;
-}
-
-  
-.profile-btn {
-    display: flex;
-}
- 
-.pet-detail-btn {
-  margin-right: 2rem;
-  background-color: #4369af;
-  color: white;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.pet-detail-btn:hover {
-  color: white;
-  transition: ease 0.5s;
-  transform: scale(.9);
-
-}
-
-.pet-detail-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  grid-gap: 1rem;
-  margin-top: 2rem;
-}
-
-.pet-detail-gallery img {
-  flex-wrap: wrap;
-  max-height: 20rem;
-  width: 100%;
-  object-fit: contain;
-  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
-}
-
-
-@media (max-width: 1100px) {
-    .profile-side {
-      width: 250px;
-      padding: 90px 15px 20px;
-    }
-  
-    .profile-img img {
-      height: 200px;
-      width: 200px;
-      left: 50px;
-      top: 50px;
-    }
   }
-  
-@media (max-width: 900px) {
-    body {
-      margin: 0 20px;
-    }
-  
-    .profile-header {
-      display: flex;
-      height: 100%;
-      flex-direction: column;
-      text-align: center;
-      padding-bottom: 20px;
-    }
-  
-    .profile-img {
-      float: left;
-      width: 100%;
-      height: 200px;
-    }
-  
-    .profile-img img {
-      position: relative;
-      height: 200px;
-      width: 200px;
-      left: 0px;
-    }
-  
-    .profile-nav-info {
-      text-align: center;
-    }
-  
-    .main-bd {
-      flex-direction: column;
-      padding-right: 0;
-    }
-  
-    .profile-side {
-      width: 100%;
-      text-align: center;
-      padding: 20px;
-      margin: 5px 0;
-    }
-  
-    .profile-nav-info .address {
-      justify-content: center;
-    }
-  
-    .user-rating {
-      justify-content: center;
-    }
 
-    .pet-detail-info {
-      display: flex;
-      border-radius: 1em;
-      flex-direction: column;
-      
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
-
-    .pet-detail-info p {
-      margin-bottom: 5px;
-      margin-left: 0px;
-      color: white;
-      font-size: 1em;
-      font-weight: 700;
-    }
-
-    .pet-detail-info i {
-      margin-bottom: 5px;
-      color: white;
-      font-size: 1em;
-      font-weight: 700;
-      margin-right: 0px;
-    }
+  .pet-detail-contact {
+  flex-direction: column;   
+  }
 }
-  
-@media (max-width: 400px) {
 
-    .profile-nav-info h3 {
-        font-size: 1.9rem;
-    }
-
-    .profile-nav-info .address p,
-    .profile-nav-info .address span {
-        font-size: 0.7rem;
-    }
-
-    .pet-detail-info {
-      display: flex;
-      border-radius: 1em;
-      flex-direction: column;
-      
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
-
-    .pet-detail-info p {
-      margin-bottom: 5px;
-      margin-left: 0px;
-      color: white;
-      font-size: 1em;
-      font-weight: 700;
-    }
-
-    .pet-detail-info i {
-      margin-bottom: 5px;
-      color: white;
-      font-size: 1em;
-      font-weight: 700;
-      margin-right: 0px;
-    }
+@media (max-width: 467px) {
+  .pet-detail-contact {
+    flex-direction: column;
+    justify-content: start;
+  }
 }

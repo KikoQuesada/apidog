@@ -17,8 +17,17 @@ header {
 
   .intro-logo h1 {
     font-size: 1.8em;
-    font-weight: 900;
+    font-weight: 500;
+    font-family: 'Fredoka one';
     color: var(--brand-color);
+    margin-top: 10rem;
+  }
+
+  .intro-logo span{
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Fredoka one';
+    color: black;
     margin-top: 10rem;
   }
   @media (min-width: 768px) {

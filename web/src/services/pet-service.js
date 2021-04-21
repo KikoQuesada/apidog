@@ -14,9 +14,17 @@ const list = (race) => {
 
 const detail = (id) => http.get(`/pets/${id}`);
 
+const create = (pet) => http.post('/pets')
+
+const update = (pet) => http.put(`/pets/${pet.id}`, pet)
+
 const service = {
     list,
-    detail
+    detail,
+    create,
+    update
 }
+
+
 
 export default service;

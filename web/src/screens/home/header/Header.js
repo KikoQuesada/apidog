@@ -5,7 +5,7 @@ function Header() {
     return (
         <header>
       <div className="intro-logo jumbo-bg">
-        <h1>Welcome to Get a Pet</h1>
+        <h1><span>Get a</span> Pet</h1>
         <h3>Your app for lovely adoptions</h3>
         <img
           className="w-25"
