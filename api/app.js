@@ -4,9 +4,12 @@ const mongoose = require('mongoose');
 const createError = require('http-errors');
 const logger = require('morgan');
 const express = require('express');
+const passport = require('passport');
 
+require('./config/passport.config')
 require('./config/db.config');
 const cors = require('./config/cors.config');
+const session = require('./config/session.config');
 
 
 const app = express();
@@ -15,7 +18,10 @@ app.use(express.static(`${__dirname}/react-app`))
 
 app.use(express.json());
 app.use(logger('dev'));
+app.use(session);
 app.use(cors);
+app.use(passport.initialize());
+app.use(passport.session());
 
 /* Configure routes */
 const router = require('./config/routes.config');

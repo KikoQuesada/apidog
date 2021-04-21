@@ -1,5 +1,6 @@
 const User = require('../models/user.model');
-const createError = require('http-errors')
+const createError = require('http-errors');
+const passport = require('passport');
 
 module.exports.create = (req, res, next) => {
 
@@ -76,3 +77,24 @@ module.exports.detail = (req, res, next) => {
             else next(createError(404, 'User not found'))
         })
 }
+
+module.exports.login = (req, res, next) => {
+    passport.authenticate('local-auth', (error, user, validations) => {
+        if(error) {
+            next(error);
+        } else if (!user) {
+            next(createError(400, { errors: validations }))
+        } else {
+            req.login(user, error => {
+                if (error) next(error)
+                else res.json
+            })
+        }
+    })(req, res, next);
+};
+
+module.exports.logout = (req, res, next) => {
+    req.logout();
+  
+    res.status(204).end()
+  }

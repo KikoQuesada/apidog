@@ -24,5 +24,5 @@ export default function usePlacesAutocomplete(text = "", debounceTimeout = 400) 
     }
   }, [text, debounceTimeout])
 
-  return predictions
+  return {predictions, setPredictions}
 }

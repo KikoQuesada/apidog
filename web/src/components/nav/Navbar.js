@@ -17,8 +17,9 @@ function Navbar() {
                         <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/shelters">Shelters</NavLink></li>
                         <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/contact">Contact Us</NavLink></li>
                     </ul>
-                    <ul>
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
                         <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/register">Register</NavLink></li>
+                        <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/login">Login</NavLink></li>
                     </ul>
                 </div>
             </div>

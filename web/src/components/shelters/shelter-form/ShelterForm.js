@@ -99,6 +99,7 @@ function ShelterForm() {
             email: '',
             phone: '',
             cif: '',
+            city: [],
             contact: '',
             description: '',
             password: '',
@@ -118,11 +119,32 @@ function ShelterForm() {
 
     const [selectedPrediction, setSelectedPrediction] = useState(null)
     const [searchValue, setSearchValue] = useState("")
-    const predictions = usePlacesAutocomplete(searchValue)
+    const {predictions, setPredictions} = usePlacesAutocomplete(searchValue)
 
     const handlePredictionSelection = (e, prediction) => {
+        const geocoder = new window.google.maps.Geocoder();
+        geocoder.geocode({ 
+            'placeId': prediction.place_id
+        }, 
+        function(responses, status) {
+            console.log(responses)
+            if (status == 'OK') {
+                var lat = responses[0].geometry.location.lat();
+                var lng = responses[0].geometry.location.lng();
+                const newState = {
+                    ...state,
+                    shelter: {
+                        ...state.shelter,
+                        city: [Number(lat), Number(lng)]
+                    }
+                }
+                setState(newState)
+            }
+        });
+        console.log(prediction)
         e.preventDefault()
         setSelectedPrediction(prediction)
+        setPredictions()
       }
 
     const handleChange = (event) => {
@@ -159,14 +181,14 @@ function ShelterForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log('ENTRA', state)
         
-        if(isValid()) {
-           
+           console.log('ENTRA')
             const { shelter } = state;
             shelterService.register(shelter)
             .then(shelter => {
                 setState(shelter)
-                history.push(`/shelters/${shelter.id}`)
+                history.push('/login')
             })
             .catch(error => {
                 const { message, errors } = error && error.response ? error.response.data : error;
@@ -177,7 +199,7 @@ function ShelterForm() {
                     errors: errors
                 }))
             })         
-        }
+        
     }
 
     const isValid = () => {
@@ -231,7 +253,7 @@ function ShelterForm() {
                     </div>
                     <div className="input-group mb-4 d-flex align-items-center">
                         <span><i className="fas fa-map-marker-alt fa-lg me-3"></i></span>
-                        <input name="predictionSearch" value={searchValue} onChange={e => setSearchValue(e.target.value)}/>
+                        <input name="predictionSearch" autoComplete='off' value={selectedPrediction?.description} onChange={e => setSearchValue(e.target.value)}/>
                         <ul className='row google-list'>
                             {predictions?.map(prediction => (
                                 <li key={prediction?.place_id}>

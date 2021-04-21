@@ -4,14 +4,15 @@ const list = () => http.get('/shelters')
 
 const detail = (id) => http.get(`/shelters/${id}`);
 
-const register = (shelter) => {
+const register = (user) => {
     const data = new FormData()
 
-    Object.keys(shelter).forEach(key => {
-        data.append(key, shelter[key])
+    Object.keys(user).forEach(key => {
+        data.append(key, user[key])
     })
 
-    http.post('/shelters', data)
+    return http.post('/shelters', data)
+    
 }
 
 const service = {

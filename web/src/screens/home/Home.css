@@ -1,0 +1,23 @@
+.home-wrapper {
+    --brand-color: #4369af;
+    --gray-color-1: #777;
+    --gray-color-2: #555;
+  }
+  a {
+    color: inherit;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .jumbo-bg {
+    background: transparent;
+    background-image: url(https://bootstrapmade.com/demo/themes/eStartup/img/hero-bg.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+  }
+  @media (min-width: 1024px) {
+    .jumbo-bg {
+      background-attachment: fixed;
+    }
+  }
