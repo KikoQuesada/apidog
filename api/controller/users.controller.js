@@ -87,7 +87,7 @@ module.exports.login = (req, res, next) => {
         } else {
             req.login(user, error => {
                 if (error) next(error)
-                else res.json
+                else res.json(user)
             })
         }
     })(req, res, next);

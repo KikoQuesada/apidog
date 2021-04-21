@@ -1,0 +1,67 @@
+.register-user-container {
+    border-radius: 5%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem 3rem 2rem;
+  }
+  
+.form-control-user:focus {
+    box-shadow: none;
+    background-color:white;
+}
+
+.form-control-underlined-user {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
+    background-color: white;
+}
+
+.user-avatar-container {
+    max-width: 10rem;
+    max-height: 10rem;
+    border-radius: 50%;
+}
+
+.create-user-btn {
+    margin-right: 2rem;
+    background-color: #4369af;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.create-user-btn:hover {
+    color: white;
+    transition: ease 0.5s;
+    transform: scale(.9);
+}
+
+.google-list-user {
+list-style: none;
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+}
+
+.google-btn-predictions-user {
+background-color: transparent;
+border: 0;
+color: black;
+font-family: 'Fredoka one';
+}
+
+.google-btn-predictions-user:hover {
+background-color: #4369af;
+border: 0;
+color: white;
+font-family: 'Fredoka one';
+}

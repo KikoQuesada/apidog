@@ -1,8 +1,22 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
+import { useContext, Fragment} from 'react';
+import { logout } from '../../services/users-service';
+import { AuthContext } from '../../contexts/AuthStore';
 import './Navbar.css';
 
 
 function Navbar() {
+
+    const { user, isAuthenticated, onUserChange } = useContext(AuthContext);
+    const history = useHistory();
+
+    async function handleLogout() {
+        await logout();
+        onUserChange(undefined);
+        history.push('/login');
+    }
+
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
             <div className="container">
@@ -12,14 +26,23 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="main-navbar">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
-                        <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/about">About Us</NavLink></li>
                         <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/pets">Pets</NavLink></li>
                         <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/shelters">Shelters</NavLink></li>
                         <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/contact">Contact Us</NavLink></li>
                     </ul>
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
-                        <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/register">Register</NavLink></li>
-                        <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/login">Login</NavLink></li>
+                    <ul className="align-items-center navbar-nav me-auto mb-2 mb-lg-0 mx-5">
+                        {!isAuthenticated() && (
+                            <Fragment>
+                                <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/register">Register</NavLink></li>
+                                <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/login">Login</NavLink></li>
+                            </Fragment>
+                        )}
+                        {isAuthenticated() && (
+                            <Fragment>
+                                <li className="nav-item mx-3"><NavLink className="nav-link-font" to={`/${user.rol === 'shelter' ? 'shelter' : 'adopters'}/${user.id}`}>{user.email}</NavLink></li>
+                                <li className="nav-item mx-3"><button className="d-flex flex-row btn btn-danger" onClick={handleLogout}><i className="fas fa-sign-out-alt"><span>LogOut</span> </i></button></li>
+                            </Fragment>
+                        )}   
                     </ul>
                 </div>
             </div>

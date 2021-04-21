@@ -10,16 +10,6 @@ const PASSWORD_PATTERN = /^.{8,}$/;
 const PHONE_PATTERN = /^[679]{1}[0-9]{8}$/;
 const CIF_PATTERN = /^([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])$/;
 
-/**
- * 
- {
-        "city": [
-            50,
-            50
-        ],
-    }
- * 
- */
 
 const validations = {
     name: (value) => {
@@ -96,6 +86,7 @@ function ShelterForm() {
     const [state, setState] = useState({
         shelter: {
             name: '',
+            avatar: '',
             email: '',
             phone: '',
             cif: '',
@@ -141,7 +132,6 @@ function ShelterForm() {
                 setState(newState)
             }
         });
-        console.log(prediction)
         e.preventDefault()
         setSelectedPrediction(prediction)
         setPredictions()
@@ -211,11 +201,12 @@ function ShelterForm() {
 
     return (
         <div className="container">
-            <div className="row">
+            <h2 className="text-center mb-5 fw-bold">Just a few info to create your Shelter Account</h2>
+            <div className="row justify-content-center">
             <div className="col-2">
-                <img className="shelter-avatar-container" alt={shelter.name} src={shelter.avatar ? shelter.avatar: 'https://res.cloudinary.com/getapet/image/upload/v1617970328/default_avatar_xnnmwl.png'} />
+                <img className="shelter-avatar-container" alt={shelter.name} src={shelter.avatar ? shelter.avatar: 'https://res.cloudinary.com/getapet/image/upload/v1618902177/web%20sources/animal-shelter_bz8fod.png'} />
             </div>
-                <form onSubmit={handleSubmit} className="col-6">
+                <form onSubmit={handleSubmit} className="col-6 shadow register-container">
                     <div className="input-group mb-4 d-flex align-items-end">
                         <span><i className="fas fa-user fa-lg me-3"></i></span>
                         <input name="name" type="text" value={shelter.name} onChange={handleChange} onBlur={handleBlur} placeholder="Name of your shelter" className={`form-control form-control-underlined border-primary ${touch.name && errors.name ? 'is-invalid' : ''}`}/>
@@ -270,12 +261,12 @@ function ShelterForm() {
                         <div className="invalid-feedback">{errors.description}</div>
                     </div>
 
-                    {/* <div className="input-group mb-4 d-flex align-items-center">
+                    <div className="input-group mb-4 d-flex align-items-center">
                         <span><i className="fas fa-cloud-upload-alt fa-lg me-3"></i></span>
                         <input name="avatar" type="file"  onChange={handleChange} onBlur={handleBlur} placeholder="Shelter logo" className={`form-control form-control-underlined border-primary ${touch.avatar && errors.avatar ? 'is-invalid' : ''}`}/>
                         <span></span>
                         <div className="invalid-feedback">{errors.avatar}</div>
-                    </div> */}
+                    </div>
 
                     <button className="btn create-shelter-btn" type="submit" disabled={isValid()}><i className="fas fa-plus"></i> Register Shelter</button>
                 </form>

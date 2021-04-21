@@ -12,6 +12,7 @@ import ShelterForm from './components/shelters/shelter-form/ShelterForm';
 import Login from './screens/Login';
 import AuthStore from './contexts/AuthStore';
 import Home from './screens/home/Home';
+import UserForm from './components/users/user-form/UserForm';
 
 function App() {
   return (
@@ -22,7 +23,6 @@ function App() {
       <div className="pt-4 pb-5 min-vh-100">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" />
           <Route exact path="/shelters" component={Shelters}/>
           <Route exact path="/shelters/:id" component={ShelterDetail}/>
           <Route exact path="/pets" component={Pets}/>
@@ -31,7 +31,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={SelectUser} />
           <Route exact path="/registerShelter" component={ShelterForm} />
-          <Route exact path="/registerUser" />
+          <Route exact path="/registerUser" component={UserForm}/>
         </Switch>
       </div>
       <Footer />

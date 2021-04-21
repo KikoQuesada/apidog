@@ -36,7 +36,7 @@ function ShelterDetail() {
         return null;
     }
     
-    const { name, pets, email, city, avatar, contact, phone, description } = shelter;
+    const { name, pets, email, avatar, contact, phone, description } = shelter;
 
     const StyledPaper = withStyles({
         root: {
@@ -58,7 +58,7 @@ function ShelterDetail() {
                         <h6 className="me-4 fw-bold"><i className="fas fa-envelope me-2"></i>{email}</h6>
                         <h6 className="me-4 fw-bold"><i className="fas fa-phone me-2"></i>{phone}</h6>
                     </div>
-                    <h6 className="fw-bold"><i className="fas fa-map-marker-alt me-2"></i>{city}</h6>
+                    {/* <h6 className="fw-bold"><i className="fas fa-map-marker-alt me-2"></i>{city}</h6> */}
                 </StyledPaper>
             </div>
             <Divider light={false} className="bg-secondary" variant="middle" />

@@ -56,12 +56,12 @@ function LoginForm() {
             <form className="login shadow col-lg-4 col-md-8 col-sm-12" onSubmit={handleSubmit}>
                 <div className="input-group mb-4 d-flex justify-content-center align-items-end">
                     <span><i className="fas fa-user fa-lg me-3"></i></span>
-                    <input type="text" placeholder="Email..." onChange={handleChange} className={`w-75 login-form-control login-form-control-underlined ${errors.email ? 'is-invalid' : ''}`}/>
+                    <input value={user.email} name='email' type="email" placeholder="Email..." onChange={handleChange} className={`w-75 login-form-control login-form-control-underlined ${errors.email ? 'is-invalid' : ''}`}/>
                     <div className="invalid-feedback"></div>
                 </div>
                 <div className="input-group mb-4 d-flex justify-content-center align-items-end">
                     <span><i className="fas fa-lock fa-lg me-3"></i></span>
-                    <input type="password" placeholder="Password..." onChange={handleChange} className='w-75 login-form-control login-form-control-underlined border-primary '/>
+                    <input value={user.password} name='password' type="password" placeholder="Password..." onChange={handleChange} className='w-75 login-form-control login-form-control-underlined border-primary '/>
                     <div className="invalid-feedback"></div>
                 </div>
                 <div className="justify-content-center">

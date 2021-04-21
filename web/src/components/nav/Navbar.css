@@ -10,3 +10,10 @@
 .nav-link-font:hover {
     color: #4369AF;
 }
+
+.btn-danger i span {
+    font-family: 'Montserrat';
+    color: white;
+    font-weight: 600;
+    margin-left: 1rem;
+}

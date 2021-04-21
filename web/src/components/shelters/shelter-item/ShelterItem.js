@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Avatar from '@material-ui/core/Avatar';
 
-function ShelterItem({ shelter: {id, name, city, avatar, pets, description}}) {
+function ShelterItem({ shelter: {id, name, avatar, pets, description}}) {
     
 
     const useStyles = makeStyles({
@@ -18,7 +18,9 @@ function ShelterItem({ shelter: {id, name, city, avatar, pets, description}}) {
       });
 
       const classes = useStyles();
+
     return(
+        
         <div>
             <Card className={classes.root}>
             
@@ -40,7 +42,7 @@ function ShelterItem({ shelter: {id, name, city, avatar, pets, description}}) {
                 </CardActionArea>
                 
                 <CardContent>
-                    <span className="badge rounded-pill bg-success me-2">{city}</span>
+                    {/* <span className="badge rounded-pill bg-success me-2">{city}</span> */}
                     {[...new Set(pets.map(p => p.specie))].map((specie, i) => <span key={i} className="badge rounded-pill bg-danger me-2">{specie}</span>)}
                 </CardContent>
             </Card>

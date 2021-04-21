@@ -14,13 +14,13 @@ function Sec3() {
           <div className="s3__frame">
             <img
               src="https://res.cloudinary.com/getapet/image/upload/v1618993036/WhatsApp_Image_2017-12-19_at_09.19.40_pslbzm.jpg"
-              alt=""
+              alt="Kiko"
             />
             <div className="s3__in-out-alert">
               <div className="s3__social-icons">
                 <i className="fab fa-facebook-f" />
                 <i className="fab fa-twitter" />
-                <i class="fab fa-linkedin-in" />
+                <i className="fab fa-linkedin-in" />
               </div>
               <h3>Web Developer and Pubs Tester</h3>
               <h3>Kiko Quesada</h3>
@@ -31,13 +31,13 @@ function Sec3() {
           <div className="s3__frame">
             <img
               src="https://res.cloudinary.com/getapet/image/upload/v1618992824/Goku_phecim.png"
-              alt=""
+              alt="Goku"
             />
             <div className="s3__in-out-alert">
               <div className="s3__social-icons">
                 <i className="fab fa-facebook-f" />
                 <i className="fab fa-twitter" />
-                <i class="fab fa-linkedin-in" />
+                <i className="fab fa-linkedin-in" />
               </div>
               <h3>CEO and Naps Manager</h3>
               <h3>Goku</h3>

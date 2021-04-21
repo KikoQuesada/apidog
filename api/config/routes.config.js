@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controller/users.controller');
 const petController = require('../controller/pets.controller');
-const uploadShelters = require('./storageShelters.config');
+const uploadShelters = require('./multer.config');
 const secure = require('../middlewares/secure.middleware');
 
 router.get('/shelters', userController.listShelters);

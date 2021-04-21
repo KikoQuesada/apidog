@@ -23,7 +23,6 @@ const userSchema = new Schema({
     },
     lastName: {
         type: String,
-        minLength: [3, 'Name needs at least 3 chars'],
         maxLength: [50, 'Name needs at most 50 chars'],
         required: function() {
             if (this.rol === 'adopter') {
@@ -57,8 +56,7 @@ const userSchema = new Schema({
     },
     avatar: {
         type: String,
-        required: true,
-        default: 'https://res.cloudinary.com/getapet/image/upload/v1617970328/default_avatar_xnnmwl.png',
+        default: 'https://res.cloudinary.com/getapet/image/upload/v1618902177/web%20sources/animal-shelter_bz8fod.png',
     },
 /*     image: {
         type: [String]
