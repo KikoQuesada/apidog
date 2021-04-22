@@ -97,8 +97,8 @@ function PetForm() {
     const [state, setState] = useState({
         pet: {
             nickname: '',
-            specie: [],
-            gender: [],
+            specie: '',
+            gender: '',
             race: '',
             age: 1,
         },
@@ -118,8 +118,8 @@ function PetForm() {
         setState(state => {
             return {
                 ...state,
-                event: {
-                    ...state.event,
+                pet: {
+                    ...state.pet,
                     [name]: value,
                 },
                 errors: {
@@ -205,8 +205,8 @@ function PetForm() {
                         <h5>Gender</h5>
                         <Select value={pet.gender} onChange={handleChange} inputProps={{name: 'gender'}} >
                             
-                            <MenuItem value={pet.gender[0]} >male</MenuItem>
-                            <MenuItem value={pet.gender[1]} >female</MenuItem>
+                            <MenuItem value='male' >male</MenuItem>
+                            <MenuItem value='female'>female</MenuItem>
                         </Select>
                         </div>
                     </div>

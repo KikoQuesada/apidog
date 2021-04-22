@@ -29,6 +29,16 @@ function Navbar() {
                         <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/pets">Pets</NavLink></li>
                         <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/shelters">Shelters</NavLink></li>
                         <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/contact">Contact Us</NavLink></li>
+                        {isAuthenticated() && user?.rol === 'adopter' && (
+                            <Fragment>
+                                <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/adoptionForm">Adoption Form</NavLink></li>
+                            </Fragment>
+                        )}
+                        {isAuthenticated() && user?.rol === 'shelter' && (
+                            <Fragment>
+                                <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/petsCreate">Create Pet</NavLink></li>
+                            </Fragment>
+                        )}
                     </ul>
                     <ul className="align-items-center navbar-nav me-auto mb-2 mb-lg-0 mx-5">
                         {!isAuthenticated() && (

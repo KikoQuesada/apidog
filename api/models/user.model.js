@@ -6,6 +6,7 @@ const PASSWORD_PATTERN = /^.{8,}$/;
 const PHONE_PATTERN = /^[679]{1}[0-9]{8}$/;
 const CIF_PATTERN = /^([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])$/;
 const Pet = require('./pet.model');
+const Adoption = require('./Adoption.model');
 
 
 const userSchema = new Schema({
@@ -56,7 +57,7 @@ const userSchema = new Schema({
     },
     avatar: {
         type: String,
-        default: 'https://res.cloudinary.com/getapet/image/upload/v1618902177/web%20sources/animal-shelter_bz8fod.png',
+        default: 'https://res.cloudinary.com/getapet/image/upload/v1618902177/web%20sources/teamwork_jqxzg6.png',
     },
 /*     image: {
         type: [String]
@@ -155,6 +156,11 @@ userSchema.virtual('pets', {
     foreignField: 'shelter'
 });
 
+userSchema.virtual('adoption', {
+    ref: Adoption.modelName,
+    localField: '_id',
+    foreignField: 'owner'
+});
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;

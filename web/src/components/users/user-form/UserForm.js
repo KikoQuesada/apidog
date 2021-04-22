@@ -18,15 +18,15 @@ const validations = {
         }
         return message;
     },
-    lastName: (value) => {
+    /* lastName: (value) => {
         let message;
         if (!value) {
             message = 'A last name is required'
-        } else if (value > 50) {
+        } else if (value.length > 50) {
             message = 'The last name cant be greater than 50 chars'
         }
         return message;
-    },
+    }, */
     email: (value) => {
         let message;
         if(!value) {
@@ -56,7 +56,7 @@ function UserForm() {
     const [state, setState] = useState({
         user: {
             name: '',
-            lastName: '',
+           /*  lastName: '', */
             avatar: '',
             email: '',
             city: [],
@@ -67,10 +67,15 @@ function UserForm() {
         errors: {
             name: validations.name(),
             email: validations.email(),
-            lastName: validations.lastName(),
+            /* lastName: validations.lastName(), */
             password: validations.password(),
         }
     });
+
+
+
+
+    
 
     const [selectedPrediction, setSelectedPrediction] = useState(null)
     const [searchValue, setSearchValue] = useState("")
@@ -101,7 +106,7 @@ function UserForm() {
         setPredictions()
       }
 
-    const handleChange = (event) => {
+      const handleChange = (event) => {
         let { name, value } = event.target;
 
         if (event.target.file) {
@@ -133,32 +138,30 @@ function UserForm() {
         }));
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log('ENTRA', state)
         
-           console.log('ENTRA')
-            const { user } = state;
-            registerUser(user)
-                .then(user => {
-                    setState(user)
-                    history.push('/login')
-                })
-                .catch(error => {
-                    const { message, errors } = error && error.response ? error.response.data : error;
-                    console.error(message);
+        const { user } = state;
+        registerUser(user)
+        .then(user => {
+            history.push('/login', { email: user.email})
+        })
+        .catch(error => {
+            const { message, errors } = error && error.response ? error.response.data : error;
+            console.error(message);
 
-                    setState(state => ({
-                        ...state,
-                        errors: errors
-                    }))
-                })         
+            setState(state => ({
+                ...state,
+                errors: errors
+            }))
+        })         
         
     }
 
     const isValid = () => {
         const { errors } = state;
-        return Object.keys(errors).some(error => errors[error]);
+        return !Object.keys(errors).some(error => errors[error]);
     }
 
     const { user, errors, touch } = state;
@@ -175,9 +178,15 @@ function UserForm() {
                 <form onSubmit={handleSubmit} className="col-4 shadow register-user-container">
                     <div className="input-group mb-4 d-flex align-items-end">
                         <span><i className="fas fa-user fa-lg me-3"></i></span>
-                        <input name="name" type="text" value={user.name} onChange={handleChange} onBlur={handleBlur} placeholder="Name of your user" className={`w-75 form-control-user form-control-underlined-user border-primary ${touch.name && errors.name ? 'is-invalid' : ''}`}/>
+                        <input name="name" type="text" value={user.name} onChange={handleChange} onBlur={handleBlur} placeholder="Enter your name" className={`w-75 form-control-user form-control-underlined-user border-primary ${touch.name && errors.name ? 'is-invalid' : ''}`}/>
                         <div className="invalid-feedback">{errors.name}</div>
                     </div>
+
+                    <div className="input-group mb-4 d-flex align-items-end">
+                        <span><i className="fas fa-user fa-lg me-3"></i></span>
+                        <input name="lastName" type="text" value={user.lastName} onChange={handleChange} onBlur={handleBlur} placeholder="Enter your last name" className={`w-75 form-control-user form-control-underlined-user border-primary ${touch.lastName && errors.lastName ? 'is-invalid' : ''}`}/>
+                        <div className="invalid-feedback">{errors.lastName}</div>
+                    </div> 
 
                     <div className="input-group mb-4 d-flex align-items-end">
                         <span><i className="fas fa-envelope fa-lg me-3"></i></span>
@@ -212,7 +221,7 @@ function UserForm() {
                         <div className="invalid-feedback">{errors.avatar}</div>
                     </div>
 
-                    <button className="btn create-user-btn" type="submit" disabled={isValid()}><i className="fas fa-plus"></i> Register User</button>
+                    <button className="btn create-user-btn" type="submit" disabled={!isValid()}><i className="fas fa-plus"></i> Register User</button>
                 </form>
             </div>
             

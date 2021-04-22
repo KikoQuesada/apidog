@@ -1,7 +1,6 @@
 import { useParams, useHistory } from 'react-router';
 import { useState, useEffect } from 'react';
 import petService from '../../../services/pet-service';
-import { Link } from 'react-router-dom'
 import './PetDetail.css';
 
 import Paper from '@material-ui/core/Paper';

@@ -14,7 +14,7 @@ const list = (race) => {
 
 const detail = (id) => http.get(`/pets/${id}`);
 
-const create = (pet) => http.post('/pets')
+const create = (pet) => http.post('/pets', pet)
 
 const update = (pet) => http.put(`/pets/${pet.id}`, pet)
 

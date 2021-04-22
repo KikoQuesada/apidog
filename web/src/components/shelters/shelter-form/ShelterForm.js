@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import shelterService from '../../../services/shelter-service';
 import './ShelterForm.css';
 import { useHistory } from 'react-router';
@@ -86,7 +86,6 @@ function ShelterForm() {
     const [state, setState] = useState({
         shelter: {
             name: '',
-            avatar: '',
             email: '',
             phone: '',
             cif: '',
@@ -107,6 +106,39 @@ function ShelterForm() {
             password: validations.password(),
         }
     });
+
+
+    const [selectedFile, setSelectedFile] = useState();
+    const [preview, setPreview] = useState();
+
+    useEffect(() => {
+        if (!selectedFile) {
+            setPreview(undefined)
+            return
+        }
+        const objectUrl = URL.createObjectURL(selectedFile)
+        setPreview(objectUrl)
+
+        return () => URL.revokeObjectURL(objectUrl)
+
+
+    }, [selectedFile])
+
+    const onSelectFile = e => {
+        if (!e.target.files || e.target.files.length === 0) {
+            setSelectedFile(undefined)
+            return
+        }
+
+        
+        setSelectedFile(e.target.files[0])
+    }
+
+
+
+
+
+
 
     const [selectedPrediction, setSelectedPrediction] = useState(null)
     const [searchValue, setSearchValue] = useState("")
@@ -173,7 +205,6 @@ function ShelterForm() {
         e.preventDefault();
         console.log('ENTRA', state)
         
-        console.log('ENTRA')
         const { shelter } = state;
         shelterService.register(shelter)
         .then(shelter => {
@@ -202,9 +233,9 @@ function ShelterForm() {
         <div className="container">
             <h2 className="text-center mb-5 fw-bold">Just a few info to create your Shelter Account</h2>
             <div className="row justify-content-center">
-            <div className="col-2">
-                <img className="shelter-avatar-container" alt={shelter.name} src={shelter.avatar ? shelter.avatar: 'https://res.cloudinary.com/getapet/image/upload/v1618902177/web%20sources/animal-shelter_bz8fod.png'} />
-            </div>
+                <div className="col-2">
+                    <img className="shelter-avatar-container" alt={shelter.name} src={preview ? preview: 'https://res.cloudinary.com/getapet/image/upload/v1618902177/web%20sources/animal-shelter_bz8fod.png'} />
+                </div>
                 <form onSubmit={handleSubmit} className="col-6 shadow register-container">
                     <div className="input-group mb-4 d-flex align-items-end">
                         <span><i className="fas fa-user fa-lg me-3"></i></span>
@@ -262,7 +293,7 @@ function ShelterForm() {
 
                     <div className="input-group mb-4 d-flex align-items-center">
                         <span><i className="fas fa-cloud-upload-alt fa-lg me-3"></i></span>
-                        <input name="avatar" type="file"  onChange={handleChange} onBlur={handleBlur} placeholder="Shelter logo" className={`form-control form-control-underlined border-primary ${touch.avatar && errors.avatar ? 'is-invalid' : ''}`}/>
+                        <input name="avatar" type="file"  onChange={onSelectFile}  placeholder="Shelter logo" className={`form-control form-control-underlined border-primary ${ errors.avatar ? 'is-invalid' : ''}`}/>
                         <span></span>
                         <div className="invalid-feedback">{errors.avatar}</div>
                     </div>
