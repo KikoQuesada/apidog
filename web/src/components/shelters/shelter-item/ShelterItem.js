@@ -36,7 +36,7 @@ function ShelterItem({ shelter: {id, name, avatar, pets, description}}) {
                         <h5 className="shelter-list-name" variant="h5" component="h2">{name}</h5>
                         <p variant="body2" color="textSecondary" component="p">{description}</p>
                         <div className="d-flex">
-                            {pets.map((pet, i) => <Avatar className="me-3" key={i} alt={pet.name} src={pet.image} />)}
+                            {pets.map((pet, i) => <Avatar className="me-3" key={i} alt={pet.nickName} src={pet.image} />)}
                         </div>
                     </CardContent>
                 </CardActionArea>

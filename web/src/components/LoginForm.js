@@ -57,7 +57,7 @@ function LoginForm() {
                 <div className="input-group mb-4 d-flex justify-content-center align-items-end">
                     <span><i className="fas fa-user fa-lg me-3"></i></span>
                     <input value={user.email} name='email' type="email" placeholder="Email..." onChange={handleChange} className={`w-75 login-form-control login-form-control-underlined ${errors.email ? 'is-invalid' : ''}`}/>
-                    <div className="invalid-feedback"></div>
+                    <div className="invalid-feedback">{errors.email}</div>
                 </div>
                 <div className="input-group mb-4 d-flex justify-content-center align-items-end">
                     <span><i className="fas fa-lock fa-lg me-3"></i></span>

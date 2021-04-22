@@ -1,6 +1,6 @@
 [
     {
-        "name": "Garfield",
+        "nickName": "Garfield",
         "race": "English shorthaired",
         "age": "6",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153090/pet_image/7b0c9f6d2fee389f8335f35f7e0be501_aimv6y.jpg",
@@ -11,7 +11,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Anubis",
+        "nickName": "Anubis",
         "race": "sphynx",
         "age": "6",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153090/pet_image/posters-sphynx-cat.jpg_ux10sd.jpg",
@@ -22,7 +22,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Tuna",
+        "nickName": "Tuna",
         "race": "labrador",
         "age": "7",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153092/pet_image/Labrador_Retriever__1210559_ewosur.jpg",
@@ -33,7 +33,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Danka",
+        "nickName": "Danka",
         "race": "american stanford",
         "age": "7",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153091/pet_image/American_Staffordshire_Terrier_zkvzkf.jpg",
@@ -44,7 +44,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Akira",
+        "nickName": "Akira",
         "race": "akita inu",
         "age": "5",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153091/pet_image/akita-inu_ksyqu8.jpg",
@@ -55,7 +55,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Pepa",
+        "nickName": "Pepa",
         "race": "german sheperd",
         "age": "7",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153092/pet_image/cosassobrepastoraleman-t_oz1mmt.jpg",
@@ -66,7 +66,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Soha",
+        "nickName": "Soha",
         "race": "labrador",
         "age": "1",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153091/pet_image/cachorro-lola-3-ptwz2g_k1y2fz.jpg",
@@ -77,7 +77,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Diana",
+        "nickName": "Diana",
         "race": "border collie",
         "age": "6",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618215776/pet_image/cara-border-collie_bh3lar.jpg",
@@ -89,7 +89,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Nora",
+        "nickName": "Nora",
         "race": "bulldog",
         "age": "6",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153091/pet_image/3249_18m_01_eqetwr.jpg",
@@ -100,7 +100,7 @@
         "status": "Adopted"
     },
     {
-        "name": "Otto",
+        "nickName": "Otto",
         "race": "doberman",
         "age": "6",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153091/pet_image/Doberman-negro_ob5qtg.jpg",
@@ -111,7 +111,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Morgana",
+        "nickName": "Morgana",
         "race": "afghan greyhound",
         "age": "6",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153091/pet_image/4972-232500-lebrel-afgano_jdtfak.jpg",
@@ -122,7 +122,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Yuna",
+        "nickName": "Yuna",
         "race": "poodle",
         "age": "7",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153092/pet_image/mascotas-perros-razas-caniche-XxXx80_yr1jfd.jpg",
@@ -133,7 +133,7 @@
         "status": "Adopted"
     },
     {
-        "name": "Cloud",
+        "nickName": "Cloud",
         "race": "tibetan mastiff",
         "age": "3",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153090/pet_image/mastin-tibetano-leon_l2bltr.jpg",
@@ -144,7 +144,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Tifa",
+        "nickName": "Tifa",
         "race": "doberman",
         "age": "5",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153092/pet_image/doberman_gumjpd.jpg",
@@ -155,7 +155,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Ocelot",
+        "nickName": "Ocelot",
         "race": "australian sheperd",
         "age": "7",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153091/pet_image/australian-shepherd-aussie-e1428533657258-720x340_bb69oo.jpg",
@@ -166,7 +166,7 @@
         "status": "Adopted"
     },
     {
-        "name": "Flash",
+        "nickName": "Flash",
         "race": "yorkshire",
         "age": "7",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153091/pet_image/yorkshire-terrier-im-grass_fym6fb.jpg",
@@ -177,7 +177,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Aeris",
+        "nickName": "Aeris",
         "race": "alaskan malamute",
         "age": "6",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153091/pet_image/razas-de-perros_-alaskan-malamute-1-655x368_drh3hh.jpg",
@@ -188,7 +188,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Lulu",
+        "nickName": "Lulu",
         "race": "brasilian fila",
         "age": "6",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153092/pet_image/fila-brasileiro-adulto_ru0uw9.jpg",
@@ -199,7 +199,7 @@
         "status": "Adopted"
     },
     {
-        "name": "Bulma",
+        "nickName": "Bulma",
         "race": "bernese mountain dog",
         "age": "6",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153091/pet_image/boyero-de-berna-rostro_lm3b4p.jpg",
@@ -210,7 +210,7 @@
         "status": "Looking for home"
     },
     {
-        "name": "Akali",
+        "nickName": "Akali",
         "race": "persian cat",
         "age": "7",
         "image": "https://res.cloudinary.com/getapet/image/upload/v1618153090/pet_image/gato-persa8_fnrech.jpg",

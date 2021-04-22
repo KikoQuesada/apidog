@@ -33,7 +33,7 @@ function PetDetail() {
         return null
     }
 
-    const { name, race, age, image, gender, personality, shelter, status, gallery } = pet;
+    const { nickName, race, age, image, gender, personality, shelter, status, gallery } = pet;
 
     const StyledPaper = withStyles({
         root: {
@@ -46,11 +46,11 @@ function PetDetail() {
         <div className="container">
             <div className="pet-info-distribution">
                 <div className="d-flex flex-column justify-content-center align-items-center pet-detail-avatar">
-                    <img className='col-6' alt={name} src={image}/>
+                    <img className='col-6' alt={nickName} src={image}/>
                     <div className={`pet-status-${status === 'Looking for home' ? 'home' : 'adopted'} shadow-sm mt-4`}>{status}</div>
                 </div>
                 <StyledPaper elevation={0} className="col-lg-6 col-sm-12 styledPaper">
-                    <h3 className="pet-detail-name">{name}</h3>
+                    <h3 className="pet-detail-name">{nickName}</h3>
                     <h4 className="mb-5">{race}</h4>
                     <div className="pet-detail-contact col-md-12">
                         <h6 className="me-4 fw-bold"><i className="pet-info-icon fas fa-birthday-cake me-2"></i>{age} {`${age > 1 ? 'Years' : 'Year'}`}</h6>
@@ -63,9 +63,9 @@ function PetDetail() {
             <Divider light={false} className="bg-secondary" variant="middle" />
             <p className="pet-detail-description">{personality}</p>
             <div className="row justify-content-center">
-            <h3 className="mb-4 title-gallery">{name}'s Image Gallery</h3>
+            <h3 className="mb-4 title-gallery">{nickName}'s Image Gallery</h3>
                 <div className="row">
-                    {gallery.map(img =><div className="col-lg-2 col-md-12 mb-4"> <img className="img-fluid mb-4 shadow-sm" key={img} src={img} alt={name}/></div>)}
+                    {gallery.map(img =><div className="col-lg-2 col-md-12 mb-4"> <img className="img-fluid mb-4 shadow-sm" key={img} src={img} alt={nickName}/></div>)}
                 </div>
             </div>
         </div>

@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 const User = require('./user.model');
 
 const petSchema = new Schema({
-    name: {
+    nickName: {
         type: String,  
-        required: 'A pet name is required',
-        minLength: [3, 'Name needs at least 3 chars'],
-        maxLength: [50, 'Name needs at most 50 chars']
+        required: 'A pet nickName is required',
+        minLength: [3, 'nickName needs at least 3 chars'],
+        maxLength: [50, 'nickName needs at most 50 chars']
     },
     image: {
         type: String,
@@ -35,8 +35,8 @@ const petSchema = new Schema({
     race: {
         type: String, 
         required: 'The pet race is required',
-        minLength: [3, 'Name needs at least 3 chars'],
-        maxLength: [50, 'Name needs at most 50 chars']
+        minLength: [3, 'Race needs at least 3 chars'],
+        maxLength: [50, 'Race needs at most 50 chars']
     },
     age: {
         type: Number, 

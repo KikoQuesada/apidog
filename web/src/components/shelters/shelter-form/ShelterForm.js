@@ -169,26 +169,25 @@ function ShelterForm() {
         }));
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log('ENTRA', state)
         
-           console.log('ENTRA')
-            const { shelter } = state;
-            shelterService.register(shelter)
-            .then(shelter => {
-                setState(shelter)
-                history.push('/login')
-            })
-            .catch(error => {
-                const { message, errors } = error && error.response ? error.response.data : error;
-                console.error(message);
+        console.log('ENTRA')
+        const { shelter } = state;
+        shelterService.register(shelter)
+        .then(shelter => {
+            history.push('/login', { email: shelter.email})
+        })
+        .catch(error => {
+            const { message, errors } = error && error.response ? error.response.data : error;
+            console.error(message);
 
-                setState(state => ({
-                    ...state,
-                    errors: errors
-                }))
-            })         
+            setState(state => ({
+                ...state,
+                errors: errors
+            }))
+        })         
         
     }
 
@@ -198,7 +197,7 @@ function ShelterForm() {
     }
 
     const { shelter, errors, touch } = state;
-
+   
     return (
         <div className="container">
             <h2 className="text-center mb-5 fw-bold">Just a few info to create your Shelter Account</h2>
