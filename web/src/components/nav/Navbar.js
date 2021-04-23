@@ -49,7 +49,7 @@ function Navbar() {
                         )}
                         {isAuthenticated() && (
                             <Fragment>
-                                <li className="nav-item mx-3"><NavLink className="nav-link-font" to={`/${user.rol === 'shelter' ? 'shelters' : 'adopters'}/${user.id}`}>{user.name}</NavLink></li>
+                                <li className="nav-item mx-3"><NavLink className="nav-link-font" to={`/${user.rol === 'shelter' ? 'shelters' : 'adopters'}/${user.id}`}>Hi, {user.name}!</NavLink></li>
                                 <li className="nav-item mx-3"><button className="d-flex flex-row btn btn-danger" onClick={handleLogout}><i className="fas fa-sign-out-alt"><span>LogOut</span> </i></button></li>
                             </Fragment>
                         )}   

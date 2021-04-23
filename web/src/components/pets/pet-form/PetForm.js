@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import petService from '../../../services/pet-service';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+import './PetForm.css'
 
 const validations = {
-    nickname: (value) => {
+    nickName: (value) => {
         let message;
         if (!value) {
             message = 'A pet name is required'
@@ -45,11 +46,22 @@ const validations = {
         let message;
         if (!value) {
             message = 'Pet age is required'
-        } else if (value < 0) {
+        } else if (Number(value) < 0) {
             message = 'Pets age needs to be greater than 0'
         }
         return message;
     },
+    personality: (value) => {
+        let message;
+        if (!value) {
+            message = 'Pet personality is required'
+        } else if (value < 20) {
+            message = 'Pet personality needs at least 20 chars'
+        } else if (value > 300) {
+            message = 'Pet personality needs at most 300 chars'
+        }
+        return message;
+    }
 }
 
 
@@ -58,33 +70,8 @@ function PetForm() {
 
     /*
     
-    race: {
-        type: String, 
-        required: 'The pet race is required',
-        minLength: [3, 'Name needs at least 3 chars'],
-        maxLength: [50, 'Name needs at most 50 chars']
-    },
-    age: {
-        type: Number, 
-        required: 'Pet age is required',
-        min: [1, 'Age must be greater than 1'],
-    },
-    gender: {
-        type: String, 
-        enum: ['male', 'female'],
-        required: 'Pet gender is required'
-    },
-    personality: {
-        type: String, 
-        required: 'Pet personality is required',
-        minLength: [20, 'Name needs at least 20 chars'],
-        maxLength: [300, 'Name needs at most 300 chars']
-    },
-    shelter: {
-        ref: 'User',
-        type: Schema.Types.ObjectId,
-        required: 'A shelter owner is required'
-    },
+    
+    
     status: {
         type: String,
         enum: ['Adopted', "Looking for home"],
@@ -96,18 +83,21 @@ function PetForm() {
 
     const [state, setState] = useState({
         pet: {
-            nickname: '',
+            nickName: '',
             specie: '',
             gender: '',
             race: '',
-            age: 1,
+            age: 0,
+            personality: '',
+            status: 'Looking for home'
         },
         errors: {
-            nickname: validations.nickname(),
+            nickName: validations.nickName(),
             specie: validations.specie(),
             gender: validations.gender(),
             race: validations.race(),
             age: validations.age(),
+            personality: validations.personality(),
         },
         touch: {}
     });
@@ -115,6 +105,11 @@ function PetForm() {
 
     const handleChange = (event) => {
         const { name, value } = event.target;
+
+        if (event.target.file) {
+            value = event.target.files[0]
+        }
+
         setState(state => {
             return {
                 ...state,
@@ -130,6 +125,32 @@ function PetForm() {
         });
     }
 
+    const [selectedFile, setSelectedFile] = useState();
+    const [preview, setPreview] = useState();
+
+    useEffect(() => {
+        if (!selectedFile) {
+            setPreview(undefined)
+            return
+        }
+        const objectUrl = URL.createObjectURL(selectedFile)
+        setPreview(objectUrl)
+
+        return () => URL.revokeObjectURL(objectUrl)
+
+
+    }, [selectedFile])
+
+    const onSelectFile = e => {
+        if (!e.target.files || e.target.files.length === 0) {
+            setSelectedFile(undefined)
+            return
+        }
+
+        
+        setSelectedFile(e.target.files[0])
+    }
+
 
 
     const handleBlur = (event) => {
@@ -143,34 +164,26 @@ function PetForm() {
         }));
       }
 
-      const handleSubmit = async (event) => {
-        event.preventDefault();
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('ENTRA', state)
+        
+        const { pet } = state;
+        petService.create(pet)
+        .then(pet => {
+            history.push(`/pets/${pet.id}`)
+        })
+        .catch(error => {
+            const { message, errors } = error && error.response ? error.response.data : error;
+            console.error(message);
 
-        if (isValid()) {
-            try {
-                const eventData = state.event;
-                const pet = eventData.id ? await petService.update(eventData) : await petService.create(eventData);
-                history.push(`/pets/${pet.id}`);
-            } catch(error) {
-                const { message, errors } = error.response?.data || error;
-
-                setState(state => ({
-                    ...state,
-                    errors: {
-                        ...errors,
-                        title: !errors && message
-                    },
-                    touch: {
-                        ...errors,
-                        title: !errors && message
-                    }
-                }));
-
-
-            }
-        }
-
-      }
+            setState(state => ({
+                ...state,
+                errors: errors
+            }))
+        })         
+        
+    }
 
       const isValid = () => {
           const { errors } = state;
@@ -183,18 +196,20 @@ function PetForm() {
         <div className="container">
             <h2 className="text-center mb-5 fw-bold">Lets create our pet profile</h2>
             <div className="row justify-content-center">
-        
+                <div className="col-2">
+                    <img className="pet-avatar-container" alt={pet.nickName} src={preview ? preview: 'https://res.cloudinary.com/getapet/image/upload/v1618949993/web%20sources/pet_zr6far.png'} />
+                </div>
                 <form onSubmit={handleSubmit} className="col-6 shadow register-container">
 
                     <div className="input-group mb-4 d-flex align-items-end">
-                        <span><i className="fas fa-paw fa-lg me-3"></i></span>
-                        <input name="nickname" type="text" value={pet.nickname} onChange={handleChange} onBlur={handleBlur} placeholder="Name of your pet" className={`form-control form-control-underlined border-primary ${touch.nickname && errors.nickname ? 'is-invalid' : ''}`}/>
-                        <div className="invalid-feedback">{errors.nickname}</div>
+                        <span><i className="fas fa-signature fa-lg me-3"></i></span>
+                        <input name="nickName" type="text" value={pet.nickName} onChange={handleChange} onBlur={handleBlur} placeholder="Name of your pet" className={`form-control form-control-underlined border-primary ${touch.nickName && errors.nickName ? 'is-invalid' : ''}`}/>
+                        <div className="invalid-feedback">{errors.nickName}</div>
                     </div>
 
                     <div className="input-group mb-4 d-flex align-items-end justify-content-around">
                         <div className="d-flex flex-column me-4">
-                        <h5>Specie</h5>
+                        <h6 className="fs-5">Specie</h6>
                         <Select  value={pet.specie} name="specie" onChange={handleChange} inputProps={{name: 'specie'}} >
                             
                             <MenuItem value="dog">Dog</MenuItem>
@@ -202,7 +217,7 @@ function PetForm() {
                         </Select>
                         </div>
                         <div className="d-flex flex-column">
-                        <h5>Gender</h5>
+                        <h6 className="fs-5">Gender</h6>
                         <Select value={pet.gender} onChange={handleChange} inputProps={{name: 'gender'}} >
                             
                             <MenuItem value='male' >male</MenuItem>
@@ -212,7 +227,7 @@ function PetForm() {
                     </div>
 
                     <div className="input-group mb-4 d-flex align-items-end">
-                        <span><i className="fas fa-venus-mars fa-lg me-3"></i></span>
+                        <span><i className="fas fa-paw fa-lg me-3"></i></span>
                         <input name="race" type="text" value={pet.race} onChange={handleChange} onBlur={handleBlur} placeholder="Race of your pet" className={`form-control form-control-underlined border-primary ${touch.race && errors.race ? 'is-invalid' : ''}`}/>
                         <div className="invalid-feedback">{errors.race}</div>
                     </div>
@@ -223,7 +238,20 @@ function PetForm() {
                         <div className="invalid-feedback">{errors.age}</div>
                     </div>
 
-                    <button className="btn create-shelter-btn" type="submit" disabled={isValid()}><i className="fas fa-plus"></i> Create Pet</button>
+                    <div className="input-group mb-4 d-flex align-items-center">
+                        <span><i className="fas fa-align-left fa-lg me-3"></i></span>
+                        <textarea rows='4' name="personality" type="text" value={pet.personality} onChange={handleChange} onBlur={handleBlur} placeholder="Describe the personality of the pet" className={`form-control form-control-underlined border-primary ${touch.personality && errors.personality ? 'is-invalid' : ''}`}/>
+                        <div className="invalid-feedback">{errors.personality}</div>
+                    </div>
+
+                    <div className="input-group mb-4 d-flex align-items-center">
+                        <span><i className="fas fa-cloud-upload-alt fa-lg me-3"></i></span>
+                        <input name="image" type="file"  onChange={onSelectFile}  placeholder="Shelter logo" className={`form-control form-control-underlined border-primary ${touch.image && errors.image ? 'is-invalid' : ''}`}/>
+                        <span></span>
+                        <div className="invalid-feedback">{errors.image}</div>
+                    </div>
+
+                    <button className="btn create-pet-btn" type="submit" disabled={isValid()}><i className="fas fa-plus"></i> Create Pet</button>
                 </form>
             </div>   
         </div>

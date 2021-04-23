@@ -1,5 +1,5 @@
 import './UserForm.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { registerUser} from '../../../services/users-service';
 import { useHistory } from 'react-router';
 import usePlacesAutocomplete from '../../shared/UsePlacesAutocomplete';
@@ -18,7 +18,7 @@ const validations = {
         }
         return message;
     },
-    /* lastName: (value) => {
+    lastName: (value) => {
         let message;
         if (!value) {
             message = 'A last name is required'
@@ -26,7 +26,7 @@ const validations = {
             message = 'The last name cant be greater than 50 chars'
         }
         return message;
-    }, */
+    },
     email: (value) => {
         let message;
         if(!value) {
@@ -56,7 +56,7 @@ function UserForm() {
     const [state, setState] = useState({
         user: {
             name: '',
-           /*  lastName: '', */
+            lastName: '',
             avatar: '',
             email: '',
             city: [],
@@ -67,7 +67,7 @@ function UserForm() {
         errors: {
             name: validations.name(),
             email: validations.email(),
-            /* lastName: validations.lastName(), */
+            lastName: validations.lastName(),
             password: validations.password(),
         }
     });
@@ -112,8 +112,6 @@ function UserForm() {
         if (event.target.file) {
             value = event.target.files[0]
         }
-
-
         setState(state => ({
             ...state,
             user: {
@@ -125,6 +123,32 @@ function UserForm() {
                 [name]: validations[name] && validations[name](value)
             }
         }));
+    }
+
+    const [selectedFile, setSelectedFile] = useState();
+    const [preview, setPreview] = useState();
+
+    useEffect(() => {
+        if (!selectedFile) {
+            setPreview(undefined)
+            return
+        }
+        const objectUrl = URL.createObjectURL(selectedFile)
+        setPreview(objectUrl)
+
+        return () => URL.revokeObjectURL(objectUrl)
+
+
+    }, [selectedFile])
+
+    const onSelectFile = e => {
+        if (!e.target.files || e.target.files.length === 0) {
+            setSelectedFile(undefined)
+            return
+        }
+
+        
+        setSelectedFile(e.target.files[0])
     }
 
     const handleBlur = (event) => {
@@ -173,7 +197,7 @@ function UserForm() {
             <h2 className="text-center mb-5 fw-bold">Just a few info to create your Account</h2>
             <div className="row justify-content-center">
             <div className="col-2">
-                <img className="user-avatar-container" alt='user' src={user.avatar ? user.avatar: 'https://res.cloudinary.com/getapet/image/upload/v1618902177/web%20sources/teamwork_jqxzg6.png'} />
+                <img className="user-avatar-container" alt='user' src={preview ? preview: 'https://res.cloudinary.com/getapet/image/upload/v1618902177/web%20sources/teamwork_jqxzg6.png'} />
             </div>
                 <form onSubmit={handleSubmit} className="col-4 shadow register-user-container">
                     <div className="input-group mb-4 d-flex align-items-end">
@@ -216,7 +240,7 @@ function UserForm() {
 
                     <div className="input-group mb-4 d-flex align-items-center">
                         <span><i className="fas fa-cloud-upload-alt fa-lg me-3"></i></span>
-                        <input name="avatar" type="file"  onChange={handleChange} onBlur={handleBlur} placeholder="user logo" className={`w-75 form-control-user form-control-underlined-user border-primary ${touch.avatar && errors.avatar ? 'is-invalid' : ''}`}/>
+                        <input name="avatar" type="file"  onChange={onSelectFile} onBlur={handleBlur} placeholder="user logo" className={`w-75 form-control-user form-control-underlined-user border-primary ${touch.avatar && errors.avatar ? 'is-invalid' : ''}`}/>
                         <span></span>
                         <div className="invalid-feedback">{errors.avatar}</div>
                     </div>

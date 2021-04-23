@@ -87,6 +87,7 @@ function ShelterForm() {
         shelter: {
             name: '',
             email: '',
+            avatar: '',
             phone: '',
             cif: '',
             city: [],
@@ -151,7 +152,7 @@ function ShelterForm() {
         }, 
         function(responses, status) {
             console.log(responses)
-            if (status == 'OK') {
+            if (status === 'OK') {
                 var lat = responses[0].geometry.location.lat();
                 var lng = responses[0].geometry.location.lng();
                 const newState = {
@@ -293,7 +294,7 @@ function ShelterForm() {
 
                     <div className="input-group mb-4 d-flex align-items-center">
                         <span><i className="fas fa-cloud-upload-alt fa-lg me-3"></i></span>
-                        <input name="avatar" type="file"  onChange={onSelectFile}  placeholder="Shelter logo" className={`form-control form-control-underlined border-primary ${ errors.avatar ? 'is-invalid' : ''}`}/>
+                        <input name="avatar" type="file"  onChange={onSelectFile}  placeholder="Shelter logo" className={`form-control form-control-underlined border-primary ${touch.avatar && errors.avatar ? 'is-invalid' : ''}`}/>
                         <span></span>
                         <div className="invalid-feedback">{errors.avatar}</div>
                     </div>

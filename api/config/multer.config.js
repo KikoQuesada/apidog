@@ -8,7 +8,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_SECRET
 });
 
-const storageShelters = cloudinaryStorage({
+const storage = cloudinaryStorage({
     cloudinary: cloudinary,
     folder: 'shelter_img',
     allowedFormats: ['jpg', 'png'],
@@ -18,6 +18,6 @@ const storageShelters = cloudinaryStorage({
 
 });
 
-const uploadCloudShelters = multer({ storage: storageShelters});
+const uploadCloud = multer({ storage: storage});
 
-module.exports = uploadCloudShelters;
+module.exports = uploadCloud;

@@ -3,7 +3,7 @@ const createError = require('http-errors');
 const passport = require('passport');
 
 module.exports.create = (req, res, next) => {
-    console.log(req.body)
+
     const { city } = req.body;
     req.body.city = {
         type: 'Point',
@@ -70,7 +70,7 @@ module.exports.update = (req, res, next) => {
 module.exports.detail = (req, res, next) => {
     User.findById(req.params.id)
     .populate('pets')
-    .populate('Adoption')
+    .populate('adoption')
     .then(user => {
         if (user) res.status(200).json(user)
         else next(createError(404, 'User not found'))

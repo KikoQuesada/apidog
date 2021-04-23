@@ -61,12 +61,15 @@ function PetDetail() {
             </div>
             <Divider light={false} className="bg-secondary" variant="middle" />
             <p className="pet-detail-description">{personality}</p>
+            
             <div className="row justify-content-center">
-            <h3 className="mb-4 title-gallery">{nickName}'s Image Gallery</h3>
+                <h3 className="mb-4 title-gallery">{nickName}'s Image Gallery</h3>
                 <div className="row">
                     {gallery.map(img =><div className="col-lg-2 col-md-12 mb-4"> <img className="img-fluid mb-4 shadow-sm" key={img} src={img} alt={nickName}/></div>)}
                 </div>
             </div>
+          
+            
         </div>
 
     )

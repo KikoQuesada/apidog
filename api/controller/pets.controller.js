@@ -2,6 +2,9 @@ const createError = require('http-errors');
 const Pet = require('../models/pet.model');
 
 module.exports.create = (req, res, next) => {
+
+    req.body.shelter = req.user.id
+
     Pet.create(req.body)
         .then(pet => res.status(201).json(pet))
         .catch(next)

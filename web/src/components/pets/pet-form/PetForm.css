@@ -1,0 +1,22 @@
+.pet-avatar-container {
+    width: 10rem;
+    height: 10rem;
+}
+
+.create-pet-btn {
+  margin-right: 2rem;
+  background-color: #4369af;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.create-pet-btn:hover {
+  color: white;
+  transition: ease 0.5s;
+  transform: scale(.9);
+}

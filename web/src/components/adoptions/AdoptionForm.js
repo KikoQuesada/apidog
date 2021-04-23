@@ -99,11 +99,11 @@ const validations = {
 
 function AdoptionForm() {
 
-    
-
     const { user } = useContext(AuthContext)
     const history = useHistory();
+
     console.log('USER', user)
+
     const [state, setState] = useState({
         adoption: {
             homeInfo: '',
@@ -170,9 +170,10 @@ function AdoptionForm() {
         console.log('USER', user)
         
         const { adoption } = state;
-        const ad = user?.adoption?.id ? adoptionService.update(user.adoption) : adoptionService.create(adoption)
+        const ad = user?.adoption?.id ? adoptionService.update(adoption) : adoptionService.create(adoption)
             .then(adoption => {
                 history.push(`/adoptions/${adoption.id}`)
+    
             })
             .catch(error => {
                 const { message, errors } = error && error.response ? error.response.data : error;

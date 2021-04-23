@@ -1,0 +1,56 @@
+.userDetail-avatar-container {
+    max-width: 25rem;
+    max-height: 25rem;
+    border-radius: 50%;
+}
+
+.userDetail-info-distribution {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.user-detail-name {
+    font-weight: 700;
+    color: #4369af;
+    font-size: 3rem;
+}
+
+.user-detail-contact {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+.user-detail-contact h6 {
+    font-size: 1.2em;
+    margin-right: 1rem;
+}
+
+.user-info-icon {
+    font-size: 1.2em;
+}
+
+.btn-primary {
+    background-color: #4369af;
+    font-weight: 700;
+}
+  
+.btn-primary:hover {
+    background-color: transparent;
+    color: #4369af;
+}
+
+.adoption-titles {
+    font-size: 1.2rem;
+    color: #4369af;
+    font-weight: 600;
+}
+
+.noAdoption-titles {
+    font-size: 1.6rem;
+    color: #4369af;
+    font-weight: 600;
+}
