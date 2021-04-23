@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useHistory } from 'react-router';
 import { AuthContext } from '../../contexts/AuthStore';
 import adoptionService from '../../services/adoption-service';
@@ -99,8 +99,11 @@ const validations = {
 
 function AdoptionForm() {
 
-    const history = useHistory();
+    
 
+    const { user } = useContext(AuthContext)
+    const history = useHistory();
+    console.log('USER', user)
     const [state, setState] = useState({
         adoption: {
             homeInfo: '',
@@ -164,12 +167,12 @@ function AdoptionForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('ENTRA', state)
+        console.log('USER', user)
         
         const { adoption } = state;
-        adoptionService.create(adoption)
+        const ad = user?.adoption?.id ? adoptionService.update(user.adoption) : adoptionService.create(adoption)
             .then(adoption => {
-                history.push('/')
+                history.push(`/adoptions/${adoption.id}`)
             })
             .catch(error => {
                 const { message, errors } = error && error.response ? error.response.data : error;

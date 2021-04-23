@@ -13,7 +13,7 @@ function UserDetail() {
     const params = useParams();
 
     const [user, setUser] = useState();
-
+    console.log('USER', user)
     useEffect(() => {
         const { id } = params;
 
@@ -50,6 +50,7 @@ function UserDetail() {
                 <div>
                     <img alt={name} src={avatar}/>
                     <h2>{name}</h2>
+                    
                 </div>
             </div>
             <div className="col-lg-8 col-md-12 col-sm-12">

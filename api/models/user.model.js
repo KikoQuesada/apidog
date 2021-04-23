@@ -116,7 +116,7 @@ const userSchema = new Schema({
                 return false;
             }
         }
-    }
+    },
 }, {
     timestamps: true,
     toJSON: {
@@ -159,7 +159,8 @@ userSchema.virtual('pets', {
 userSchema.virtual('adoption', {
     ref: Adoption.modelName,
     localField: '_id',
-    foreignField: 'owner'
+    foreignField: 'owner',
+    justOne: true
 });
 
 const User = mongoose.model('User', userSchema);

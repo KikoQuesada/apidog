@@ -6,9 +6,9 @@ function Sec2() {
 <section className="s2">
     <Container>
       <Row className="flex-align">
-        <Col md="5" lg="3" className="s2__mob-pic">
+        <Col md="5" lg="5"  className="s2__mob-pic">
           <img
-            src="https://bootstrapmade.com/demo/themes/eStartup/img/about-img.png"
+            src="https://res.cloudinary.com/getapet/image/upload/v1619165283/web%20sources/Happy_Family_igy1bw.png"
             alt="adoption form"
           />
         </Col>

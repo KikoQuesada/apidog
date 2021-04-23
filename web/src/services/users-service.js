@@ -23,3 +23,5 @@ export const registerUser = (user) => {
 }
 
 export const detail = (id) => http.get(`/adopters/${id}`);
+
+export const update = (user) => http.patch(`/adopters/${user.id}`, user)

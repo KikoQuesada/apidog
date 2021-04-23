@@ -19,7 +19,7 @@ router.delete('/shelters/:id', userController.delete);
 router.get('/adopters', userController.listAdopters)
 router.post('/adopters', uploadShelters.single('avatar'), userController.create);
 router.get('/adopters/:id', userController.detail);
-router.put('/adopters/:id', userController.update);
+router.patch('/adopters/:id', userController.update);
 router.delete('/adopters/:id',userController.delete);
 
 
@@ -31,6 +31,7 @@ router.put('/pets/:id', petController.update);
 router.delete('/pets/:id', petController.delete);
 
 // ADOPTIONS ROUTES --
+router.patch('/adoptions/:id', adoptionController.update);
 router.post('/adoptions', adoptionController.create);
 router.get('/adoptions/:id', adoptionController.detail);
 

@@ -13,6 +13,7 @@ http.interceptors.response.use(function (response) {
     const status = error?.response?.status;
     switch (status) {
         case 401:
+            localStorage.removeItem(currentUserStorageKey);
             window.location.replace('/login')
             break;
         case 404:

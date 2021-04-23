@@ -49,6 +49,7 @@ module.exports.delete = (req, res, next) => {
 
 module.exports.update = (req, res, next) => {
     const { city } = req.body;
+    const { id } = req.params;
 
     if (city) {
         req.body.city = {
@@ -61,18 +62,15 @@ module.exports.update = (req, res, next) => {
         req.body.avatar = req.file.url
     }
 
-    User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
-        .then(user => {
-            if (user) res.status(200).json(user)
-            else next(createError(404, 'User not found'))
-        })
+    User.findByIdAndUpdate(id, req.body, { new: true })
+        .then(user => res.status(202).json(user))
         .catch(next)
 }
 
 module.exports.detail = (req, res, next) => {
     User.findById(req.params.id)
     .populate('pets')
-    .populate('adoption')
+    .populate('Adoption')
     .then(user => {
         if (user) res.status(200).json(user)
         else next(createError(404, 'User not found'))
