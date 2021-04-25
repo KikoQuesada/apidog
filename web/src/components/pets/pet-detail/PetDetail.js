@@ -1,14 +1,19 @@
-import { useParams, useHistory } from 'react-router';
-import { useState, useEffect } from 'react';
-import petService from '../../../services/pet-service';
-import './PetDetail.css';
-
 import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core';
+import { useParams, useHistory } from 'react-router';
+import { useState, useEffect, useContext } from 'react';
+import petService from '../../../services/pet-service';
+import './PetDetail.css';
+import { Link } from 'react-router-dom';
+const mailer = require('../../shared/mailer');
+const { AuthContext } = '../../../contexts/AuthStore.js';
+
+
 
 function PetDetail() {
 
+    /* const user = useContext(AuthContext) */
     const history = useHistory();
     const params = useParams();
 
@@ -31,6 +36,12 @@ function PetDetail() {
     if (!pet) {
         return null
     }
+
+    /* const handleEmail = () => {
+
+         mailer.sendAdoptionEmail(pet, user);
+         history.push('/adoptionNotification')
+    } */
 
     const { nickName, race, age, image, gender, personality, shelter, status, gallery } = pet;
 
@@ -55,7 +66,7 @@ function PetDetail() {
                         <h6 className="me-4 fw-bold"><i className="pet-info-icon fas fa-birthday-cake me-2"></i>{age} {`${age > 1 ? 'Years' : 'Year'}`}</h6>
                         <h6 className="me-4 fw-bold"><i className={`pet-info-icon fas fa-${gender === 'male' ? 'mars' : 'venus'} me-2`}></i>{gender}</h6>
                         <h6 className="me-4 fw-bold"><i className={`pet-info-icon fas fa-home me-2`}></i>{shelter.name}</h6>
-                        
+                        <button className="btn btn-primary" /* onClick={handleEmail} */><Link to='/'>Send Adoption Notification</Link></button>
                     </div>
                 </StyledPaper>
             </div>

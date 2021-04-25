@@ -61,8 +61,8 @@ function LoginForm() {
                 </div>
                 <div className="input-group mb-4 d-flex justify-content-center align-items-end">
                     <span><i className="fas fa-lock fa-lg me-3"></i></span>
-                    <input value={user.password} name='password' type="password" placeholder="Password..." onChange={handleChange} className='w-75 login-form-control login-form-control-underlined border-primary '/>
-                    <div className="invalid-feedback"></div>
+                    <input value={user.password} name='password' type="password" placeholder="Password..." onChange={handleChange} className={`w-75 login-form-control login-form-control-underlined ${errors.email ? 'is-invalid' : ''}`}/>
+                    <div className="invalid-feedback">{errors.email}</div>
                 </div>
                 <div className="justify-content-center">
                     <button className="mt-5 btn login-btn"><Link className="login-btn-link" to='/register'>Register</Link></button>
