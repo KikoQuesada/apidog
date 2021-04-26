@@ -15,6 +15,7 @@ import Home from './screens/home/Home';
 import UserForm from './components/users/user-form/UserForm';
 import PetForm from './components/pets/pet-form/PetForm';
 import Adoption from './screens/Adoption';
+import AdoptionInfo from './screens/adoption/AdoptionInfo';
 import UserDetail from './components/users/user-detail/UserDetail';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
 
           <Route exact path="/registerUser" component={UserForm}/>
           <Route exact path="/adoptionForm" component={Adoption}/>
+          <Route exact path="/adoptionInfo" component={AdoptionInfo}/>
           <Route exact path="/adopters/:id" component={UserDetail}/>
         </Switch>
       </div>

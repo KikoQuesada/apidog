@@ -31,7 +31,7 @@ function Navbar() {
                         <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/contact">Contact Us</NavLink></li>
                         {isAuthenticated() && user?.rol === 'adopter' && (
                             <Fragment>
-                                <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/adoptionForm">Adoption Form</NavLink></li>
+                                <li className="nav-item mx-3"><NavLink className="nav-link-font" to="/adoptionInfo">Adoption Form</NavLink></li>
                             </Fragment>
                         )}
                         {isAuthenticated() && user?.rol === 'shelter' && (

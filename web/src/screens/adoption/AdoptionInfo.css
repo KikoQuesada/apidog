@@ -1,0 +1,33 @@
+.adoptionInfo-img {
+    width: 10rem;
+}
+
+.adoptionInfo-title {
+    font-size: 1.8rem;
+    color: #4369af;
+    font-weight: 600;
+    margin: 1rem 1rem;
+}
+
+.adoptionInfo-text {
+    font-size: 1.2rem;
+    margin: 1rem 1rem;
+}
+
+.go-adoption-btn {
+    margin-right: 2rem;
+    background-color: #4369af;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.go-adoption-btn:hover {
+    color: white;
+    transition: ease 0.5s;
+    transform: scale(.9);
+}
