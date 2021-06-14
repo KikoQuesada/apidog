@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import './PetsList.css'
 import PetItem from './../pet-item/Petitem';
 import PetFilter from '../pet-filter/PetFilter';
-import { Link } from 'react-router-dom';
+
 
 function PetsList() {
 

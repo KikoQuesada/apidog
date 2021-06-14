@@ -3,7 +3,7 @@ const router = express.Router();
 const userController = require('../controller/users.controller');
 const petController = require('../controller/pets.controller');
 const adoptionController = require('../controller/adoption.controller');
-const upload = require('./multer.config');
+const upload = require('./storageUsers.config');
 const secure = require('../middlewares/secure.middleware');
 
 

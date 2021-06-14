@@ -36,7 +36,7 @@ function UserDetail() {
 
 
 
-    const { rol, name, lastName, email, avatar, adoption } = user;
+    const { name, lastName, email, avatar, adoption } = user;
 
     const StyledPaper = withStyles({
         root: {

@@ -30,7 +30,7 @@ function ShelterItem({ shelter: {id, name, avatar, pets, description}}) {
                         alt={name}
                         height="140"
                         image={avatar}
-                        title="Contemplative Reptile"
+                        title="Shelter Img"
                         />
                     <CardContent>
                         <h5 className="shelter-list-name" variant="h5" component="h2">{name}</h5>

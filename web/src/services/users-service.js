@@ -1,5 +1,5 @@
 import http from './base-api-service';
-import UserDetail from './../components/users/user-detail/UserDetail';
+
 
 export const login = (email, password) => http.post('/login', { email, password})
 

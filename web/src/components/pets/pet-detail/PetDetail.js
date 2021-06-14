@@ -2,12 +2,11 @@ import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core';
 import { useParams, useHistory } from 'react-router';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import petService from '../../../services/pet-service';
 import './PetDetail.css';
 import { Link } from 'react-router-dom';
-const mailer = require('../../shared/mailer');
-const { AuthContext } = '../../../contexts/AuthStore.js';
+
 
 
 

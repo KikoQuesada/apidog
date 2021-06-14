@@ -1,5 +1,5 @@
 import shelterService from '../../../services/shelter-service';
-import { useState, useEffect, Fragment, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
@@ -66,7 +66,8 @@ function ShelterDetail() {
                         <h6 className="me-4 fw-bold"><i className="fas fa-envelope me-2"></i>{email}</h6>
                         <h6 className="me-4 fw-bold"><i className="fas fa-phone me-2"></i>{phone}</h6>
                     </div>
-                    {/* <h6 className="fw-bold"><i className="fas fa-map-marker-alt me-2"></i>{city}</h6> */}
+                    {/* TODO: RESOLVE THE COORDINATES INTO A CITY IN THE FRONT
+                    <h6 className="fw-bold"><i className="fas fa-map-marker-alt me-2"></i>{city}</h6> */}
                 </StyledPaper>
             </div>
             <Divider light={false} className="bg-secondary" variant="middle" />

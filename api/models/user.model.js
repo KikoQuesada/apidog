@@ -5,6 +5,8 @@ const EMAIL_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"
 const PASSWORD_PATTERN = /^.{8,}$/;
 const PHONE_PATTERN = /^[679]{1}[0-9]{8}$/;
 const CIF_PATTERN = /^([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])$/;
+const WEB_PATTERN = /^((?:http(?:s)?\:\/\/)?[a-zA-Z0-9_-]+(?:.[a-zA-Z0-9_-]+)*.[a-zA-Z]{2,4}(?:\/[a-zA-Z0-9_]+)*(?:\/[a-zA-Z0-9_]+.[a-zA-Z]{2,4}(?:\?[a-zA-Z0-9_]+\=[a-zA-Z0-9_]+)?)?(?:\&[a-zA-Z0-9_]+\=[a-zA-Z0-9_]+)*)$/;
+
 const Pet = require('./pet.model');
 const Adoption = require('./Adoption.model');
 
@@ -39,6 +41,10 @@ const userSchema = new Schema({
         required: 'A valid email is required',
         match: [EMAIL_PATTERN, 'The email is invalid']
     },
+    web: {
+        type: String,
+        match: [WEB_PATTERN, 'The URL is invalid']
+    },
     city: {
         type: {
             type: String,
@@ -59,9 +65,6 @@ const userSchema = new Schema({
         type: String,
         default: 'https://res.cloudinary.com/getapet/image/upload/v1618902177/web%20sources/teamwork_jqxzg6.png',
     },
-/*     image: {
-        type: [String]
-    }, */
     password: {
         type: String,
         required: 'A valid password is required',
@@ -107,8 +110,8 @@ const userSchema = new Schema({
     },
     description: {
         type: String,
-        minLength: [100, 'Name needs at least 100 chars'],
-        maxLength: [300, 'Name needs at most 300 chars'],
+        minLength: [100, 'Description needs at least 100 chars'],
+        maxLength: [300, 'Description needs at most 300 chars'],
         required: function() {
             if (this.rol === 'shelter') {
                 return true;
