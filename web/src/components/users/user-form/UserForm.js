@@ -199,7 +199,7 @@ function UserForm() {
             <div className="col-2">
                 <img className="user-avatar-container" alt='user' src={preview ? preview: 'https://res.cloudinary.com/getapet/image/upload/v1618902177/web%20sources/teamwork_jqxzg6.png'} />
             </div>
-                <form onSubmit={handleSubmit} className="col-4 shadow register-user-container">
+                <form encType="multipart/form-data" onSubmit={handleSubmit} className="col-4 shadow register-user-container">
                     <div className="input-group mb-4 d-flex align-items-end">
                         <span><i className="fas fa-user fa-lg me-3"></i></span>
                         <input name="name" type="text" value={user.name} onChange={handleChange} onBlur={handleBlur} placeholder="Enter your name" className={`w-75 form-control-user form-control-underlined-user border-primary ${touch.name && errors.name ? 'is-invalid' : ''}`}/>
